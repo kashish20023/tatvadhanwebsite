@@ -4,13 +4,13 @@ import { PageHeader } from "@/components/layout/PageHeader";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Terms & Conditions | Tatvdhan Jaipur",
-  description: "Terms and conditions governing bespoke orders and services at Tatvdhan Jaipur.",
+  title: "Terms & Conditions | Tatvadhan Jaipur",
+  description: "Terms and conditions governing bespoke orders and services at Tatvadhan Jaipur.",
 };
 
 export default function TermsPage() {
   return (
-    <div className="min-h-screen bg-white text-[#101010]">
+    <div className="min-h-screen bg-transparent text-[#101010]">
       <Header />
 
       <PageHeader
@@ -24,7 +24,7 @@ export default function TermsPage() {
         <section>
           <h2 className="font-serif text-xl text-[#12100E] mb-3">1. Bespoke Commissions</h2>
           <p>
-            Every Tatvdhan ensemble is individually tailored to client measurements and crafted by hand in Jaipur. Due to the artisanal hand-embroidery process, subtle natural variations in dye lots and threadwork reflect true authenticity and are an inherent quality of haute couture.
+            Every Tatvadhan ensemble is individually tailored to client measurements and crafted by hand in Jaipur. Due to the artisanal hand-embroidery process, subtle natural variations in dye lots and threadwork reflect true authenticity and are an inherent quality of haute couture.
           </p>
         </section>
 
@@ -38,7 +38,7 @@ export default function TermsPage() {
         <section>
           <h2 className="font-serif text-xl text-[#12100E] mb-3">3. Intellectual Property</h2>
           <p>
-            All campaign imagery, lookbook photography, proprietary embroidery patterns, and garment cuts remain the exclusive intellectual property of Tatvdhan Jaipur and Vinayak Agarwal.
+            All campaign imagery, lookbook photography, proprietary embroidery patterns, and garment cuts remain the exclusive intellectual property of Tatvadhan Jaipur and Vinayak Agarwal.
           </p>
         </section>
       </article>

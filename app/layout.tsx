@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { ScrollRevealProvider } from "@/components/ui/ScrollRevealProvider";
+import "animate.css";
 import "./globals.css";
 
 export const viewport: Viewport = {
@@ -10,15 +11,15 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://tatvdhan.com"),
+  metadataBase: new URL("https://Tatvadhan.com"),
   title: {
-    default: "Tatvdhan Jaipur | The Wedding Chapter",
-    template: "%s | Tatvdhan Jaipur",
+    default: "Tatvadhan Jaipur | The Wedding Chapter",
+    template: "%s | Tatvadhan Jaipur",
   },
   description:
-    "Tatvdhan — Rooted in tradition. Made for today. Bespoke Indian bridal & ceremonial couture by Vinayak Agarwal in Jaipur.",
+    "Tatvadhan — Rooted in tradition. Made for today. Bespoke Indian bridal & ceremonial couture by Vinayak Agarwal in Jaipur.",
   keywords: [
-    "Tatvdhan",
+    "Tatvadhan",
     "Jaipur Couture",
     "Indian Bridal Wear",
     "Sherwani",
@@ -27,23 +28,23 @@ export const metadata: Metadata = {
     "Vinayak Agarwal",
   ],
   authors: [{ name: "Vinayak Agarwal" }],
-  creator: "Tatvdhan Jaipur",
+  creator: "Tatvadhan Jaipur",
   icons: {
     icon: "/images/image_01.png",
     shortcut: "/images/image_01.png",
     apple: "/images/image_01.png",
   },
   openGraph: {
-    title: "Tatvdhan Jaipur | The Wedding Chapter",
-    description: "Tatvdhan — Rooted in tradition. Made for today.",
-    url: "https://tatvdhan.com",
-    siteName: "Tatvdhan Jaipur",
+    title: "Tatvadhan Jaipur | The Wedding Chapter",
+    description: "Tatvadhan — Rooted in tradition. Made for today.",
+    url: "https://Tatvadhan.com",
+    siteName: "Tatvadhan Jaipur",
     images: [
       {
         url: "/images/image_18.webp",
         width: 1200,
         height: 630,
-        alt: "Tatvdhan Jaipur Couture Campaign",
+        alt: "Tatvadhan Jaipur Couture Campaign",
       },
     ],
     locale: "en_US",
@@ -68,9 +69,24 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className="antialiased bg-white text-[#101010] selection:bg-[#E8C35A] selection:text-black">
-        <ScrollRevealProvider />
-        {children}
+      <body className="antialiased text-[#101010] selection:bg-[#E8C35A] selection:text-black relative min-h-screen">
+        {/* Global Royal Damask Wallpaper Background across all pages */}
+        <div
+          className="pointer-events-none fixed inset-0 z-0 select-none overflow-hidden"
+          aria-hidden="true"
+        >
+          {/* High-quality small-scale repeating damask pattern */}
+          <div
+            className="absolute inset-0 bg-[url('/images/damask_seamless_hd.webp')] bg-repeat bg-[length:260px_auto]"
+          />
+          {/* Light Color Transparency Layer */}
+          <div className="absolute inset-0 bg-[#faf6f0]/72 backdrop-blur-[0.2px]" />
+        </div>
+
+        <div className="relative z-10 min-h-screen flex flex-col">
+          <ScrollRevealProvider />
+          {children}
+        </div>
       </body>
     </html>
   );

@@ -1,6 +1,6 @@
-# Tatvdhan Jaipur — The Wedding Chapter
+# Tatvadhan Jaipur — The Wedding Chapter
 
-An editorial couture website recreated from the supplied Tatvdhan reference PDF and exact brand assets. Built with Next.js, React, and Tailwind CSS through the Vinext runtime used by this project.
+An editorial couture website recreated from the supplied Tatvadhan reference PDF and exact brand assets. Built with Next.js, React, and Tailwind CSS through the Vinext runtime used by this project.
 
 ## Run locally
 

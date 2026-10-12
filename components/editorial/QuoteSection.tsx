@@ -12,11 +12,11 @@ interface QuoteSectionProps extends React.HTMLAttributes<HTMLDivElement> {
 }
 
 export function QuoteSection({
-  quote = "“Tatvdhan — Rooted in tradition. Made for today.”",
+  quote = "“Tatvadhan — Rooted in tradition. Made for today.”",
   eyebrow = "Bespoke Philosophy",
   supportingText = "Each silhouette is handcrafted by master karigars in Jaipur. Schedule a private consultation at our flagship or arrange a virtual trunk show.",
   ctaText = "Inquire About The Collection",
-  ctaHref = "mailto:contact@tatvdhan.com?subject=Private%20Couture%20Inquiry",
+  ctaHref = "mailto:contact@Tatvadhan.com?subject=Private%20Couture%20Inquiry",
   dark = true,
   className,
   ...props

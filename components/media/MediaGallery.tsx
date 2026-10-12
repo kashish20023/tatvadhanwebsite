@@ -162,7 +162,7 @@ export function MediaGallery() {
                 <div className="absolute bottom-0 inset-x-0 p-3 sm:p-4 transform translate-y-2 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none">
                   <div className="flex items-center gap-2 mb-1">
                     <span className="text-[8px] sm:text-[8.5px] uppercase tracking-[0.22em] text-[#D6B772] font-medium">
-                      {item.location || "Tatvdhan Jaipur"}
+                      {item.location || "Tatvadhan Jaipur"}
                     </span>
                     {item.year && (
                       <span className="text-[8px] text-white/60">· {item.year}</span>
@@ -193,7 +193,7 @@ export function MediaGallery() {
           >
             <div className="flex items-center gap-3">
               <span className="text-[10px] uppercase tracking-[0.25em] text-[#D6B772] font-medium">
-                Tatvdhan Visual Archive
+                Tatvadhan Visual Archive
               </span>
               <span className="text-white/30">|</span>
               <span className="text-[10px] uppercase tracking-[0.2em] text-white/70">

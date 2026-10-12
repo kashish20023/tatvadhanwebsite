@@ -179,6 +179,15 @@ export const CardCarousel: React.FC<CarouselProps> = ({
   }
   `
 
+  // Ensure sufficient slides for infinite seamless 3D loop on wide screens
+  const displayImages = React.useMemo(() => {
+    if (!images || images.length === 0) return []
+    if (images.length < 24) {
+      return [...images, ...images, ...images]
+    }
+    return images
+  }, [images])
+
   return (
     <section className="card-carousel-root w-full space-y-4">
       <style>{css}</style>
@@ -186,7 +195,7 @@ export const CardCarousel: React.FC<CarouselProps> = ({
 
 
         <div className="flex flex-col justify-center pb-2 pl-2 pt-0 sm:pt-0 md:items-center w-full text-center">
-          <h3 className="text-2xl sm:text-3xl md:text-4xl opacity-90 font-serif font-medium tracking-tight text-[#101010]">
+          <h3 className="mt-[14px] font-serif text-[clamp(34px,4vw,51px)] max-[600px]:text-[39px] font-bold leading-[1.04] text-[#000000]">
             {title}
           </h3>
           {subtitle && (
@@ -208,6 +217,8 @@ export const CardCarousel: React.FC<CarouselProps> = ({
               grabCursor={true}
               centeredSlides={true}
               loop={true}
+              loopAdditionalSlides={6}
+              watchSlidesProgress={true}
               slidesPerView={"auto"}
               coverflowEffect={{
                 rotate: 0,
@@ -233,7 +244,7 @@ export const CardCarousel: React.FC<CarouselProps> = ({
               }
               modules={[EffectCoverflow, Autoplay, Pagination, Navigation]}
             >
-              {images.map((image, index) => (
+              {displayImages.map((image, index) => (
                 <SwiperSlide key={`slide-${index}-${image.src}`}>
                   <div className="w-full h-full rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl bg-[#181615]">
                     <Image
@@ -242,7 +253,7 @@ export const CardCarousel: React.FC<CarouselProps> = ({
                       height={850}
                       className="w-full h-full object-cover select-none"
                       alt={image.alt}
-                      priority={index === 0}
+                      priority={index < 4}
                     />
                   </div>
                 </SwiperSlide>

@@ -26,7 +26,7 @@ export function PageHeader({
   return (
     <section
       className={cn(
-        "relative border-b border-[#ECE7DE] bg-[#FAF8F5] pt-16 pb-14 md:pt-20 md:pb-16 px-6 text-center overflow-hidden",
+        "relative border-b border-[#ECE7DE] bg-[#FAF8F5]/75 backdrop-blur-sm pt-16 pb-14 md:pt-20 md:pb-16 px-6 text-center overflow-hidden",
         className
       )}
     >

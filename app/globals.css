@@ -1796,15 +1796,11 @@ img {
 }
 
 .scroll-reveal-img {
-  opacity: 0;
-  transform: translateY(36px) scale(0.985);
-  transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
-  will-change: opacity, transform;
+  opacity: 1;
 }
 
 .scroll-reveal-img.is-visible {
   opacity: 1;
-  transform: translateY(0) scale(1);
 }
 
 /* Luxury Couture Slim Scrollbar */
@@ -1824,6 +1820,100 @@ img {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #93753E;
+}
+
+/* ============================================================
+   LUXURY ANIMATE.CSS EXTENSION & SCROLL INTEGRATION
+   Ensures animations are slow, stately, and trigger only when scrolled into view
+============================================================ */
+:root {
+  --animate-duration: 5s;
+}
+
+.animate__slow {
+  animation-duration: 3.2s !important;
+}
+
+.animate__slower {
+  animation-duration: 3s !important;
+}
+
+/* Pause and hide animate__animated elements until they scroll into view */
+.animate__animated:not(.is-visible):not(.animate-on-load) {
+  animation-play-state: paused !important;
+  visibility: hidden;
+}
+
+.animate__animated.is-visible,
+.animate__animated.animate-on-load {
+  animation-play-state: running !important;
+  visibility: visible;
+}
+
+/* Also allow parent .is-visible to unpause child .animate__animated elements */
+.is-visible .animate__animated:not(.animate-on-load) {
+  animation-play-state: running !important;
+  visibility: visible;
+}
+
+/* Prevent conflict between .scroll-reveal transform transition and animate.css keyframes */
+.scroll-reveal.animate__animated {
+  transform: none;
+  transition: none;
+}
+
+/* ============================================================
+   ROYAL RAJASTHANI ARCH FRAME (POINTED MEHRAB)
+   Clips images into the iconic Jaipur palace pointed archway
+============================================================ */
+.arch-frame {
+  clip-path: polygon(0% 100%,
+      0% 45%,
+      0.8% 38.6%,
+      2.8% 32.8%,
+      6% 27.4%,
+      10.7% 22.3%,
+      16.6% 17.6%,
+      23.5% 13.2%,
+      30.9% 9.2%,
+      38.4% 5.6%,
+      45.2% 2.5%,
+      50% 0%,
+      54.8% 2.5%,
+      61.6% 5.6%,
+      69.1% 9.2%,
+      76.5% 13.2%,
+      83.4% 17.6%,
+      89.3% 22.3%,
+      94% 27.4%,
+      97.2% 32.8%,
+      99.2% 38.6%,
+      100% 45%,
+      100% 100%);
+  -webkit-clip-path: polygon(0% 100%,
+      0% 45%,
+      0.8% 38.6%,
+      2.8% 32.8%,
+      6% 27.4%,
+      10.7% 22.3%,
+      16.6% 17.6%,
+      23.5% 13.2%,
+      30.9% 9.2%,
+      38.4% 5.6%,
+      45.2% 2.5%,
+      50% 0%,
+      54.8% 2.5%,
+      61.6% 5.6%,
+      69.1% 9.2%,
+      76.5% 13.2%,
+      83.4% 17.6%,
+      89.3% 22.3%,
+      94% 27.4%,
+      97.2% 32.8%,
+      99.2% 38.6%,
+      100% 45%,
+      100% 100%);
+  will-change: transform, filter;
 }
 
 @media (prefers-reduced-motion: reduce) {

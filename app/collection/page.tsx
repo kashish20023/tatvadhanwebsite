@@ -19,7 +19,7 @@ export default function CollectionPage() {
       : collectionPairs.filter((pair) => pair.category === activeCategory);
 
   return (
-    <div className="min-h-screen bg-white text-[#101010] selection:bg-[#E8C35A] selection:text-black">
+    <div className="min-h-screen bg-transparent text-[#101010] selection:bg-[#E8C35A] selection:text-black">
       {/* Site Header */}
       <Header />
 

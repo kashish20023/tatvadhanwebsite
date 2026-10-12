@@ -7,7 +7,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Occasions | Ceremonial Indian Couture",
-  description: "Curated wedding occasion chapters for the groom and wedding entourage by Tatvdhan Jaipur.",
+  description: "Curated wedding occasion chapters for the groom and wedding entourage by Tatvadhan Jaipur.",
 };
 
 export default function OccasionsPage() {
@@ -23,7 +23,7 @@ export default function OccasionsPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-white text-[#101010]">
+    <div className="min-h-screen bg-transparent text-[#101010]">
       <Header />
 
       <PageHeader

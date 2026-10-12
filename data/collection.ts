@@ -177,7 +177,7 @@ export const collectionStripItems: CollectionStripItem[] = [
     image: "/images/image_18.webp",
     alt: "Regal wedding campaign backdrop in Amber Palace Jaipur",
     tag: "CAMPAIGN",
-    title: "The Wedding Chapter Campaign",
+    title: "The Wedding Chapter",
     href: "/collection",
   },
 ];

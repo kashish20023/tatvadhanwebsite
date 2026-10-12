@@ -5,13 +5,13 @@ import { contactDetails } from "@/data/site";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Private Consultation & Concierge | Tatvdhan Jaipur",
-  description: "Schedule a private consultation or virtual trunk show with the Tatvdhan Jaipur concierge.",
+  title: "Private Consultation & Concierge | Tatvadhan Jaipur",
+  description: "Schedule a private consultation or virtual trunk show with the Tatvadhan Jaipur concierge.",
 };
 
 export default function ContactPage() {
   return (
-    <div className="min-h-screen bg-white text-[#101010]">
+    <div className="min-h-screen bg-transparent text-[#101010]">
       <Header />
 
       <PageHeader

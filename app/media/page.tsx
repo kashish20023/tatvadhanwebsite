@@ -6,13 +6,13 @@ import { CraftComparisonSection } from "@/components/media/CraftComparisonSectio
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Media & Visual Archives | Tatvdhan Jaipur",
-  description: "Editorial campaigns, runway captures, and haute couture photographic chronicles from Tatvdhan Jaipur.",
+  title: "Media & Visual Archives | Tatvadhan Jaipur",
+  description: "Editorial campaigns, runway captures, and haute couture photographic chronicles from Tatvadhan Jaipur.",
 };
 
 export default function MediaPage() {
   return (
-    <div className="min-h-screen bg-white text-[#101010]">
+    <div className="min-h-screen bg-transparent text-[#101010]">
       <Header />
 
       <PageHeader

@@ -19,7 +19,7 @@ export const mediaCategories = [
 ] as const;
 
 // Perfectly mathematically balanced grid blocks (4 columns wide on desktop, 2 on tablet)
-// Zero gaps, zero empty holes, complete rectangular packing using authentic Tatvdhan assets
+// Zero gaps, zero empty holes, complete rectangular packing using authentic Tatvadhan assets
 export const mediaGalleryItems: MediaItem[] = [
   // BLOCK 1: 2 + 1 + 1 = 4 cols (1 row)
   {

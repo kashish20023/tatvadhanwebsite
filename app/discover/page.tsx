@@ -6,13 +6,13 @@ import Link from "next/link"; import { CraftComparisonSection } from "@/componen
 
 
 export const metadata: Metadata = {
-  title: "Discover | The Craft of Tatvdhan",
-  description: "Explore the artisanal craftsmanship, Rajasthan textile heritage, and tailoring atelier behind Tatvdhan Jaipur.",
+  title: "Discover | The Craft of Tatvadhan",
+  description: "Explore the artisanal craftsmanship, Rajasthan textile heritage, and tailoring atelier behind Tatvadhan Jaipur.",
 };
 
 export default function DiscoverPage() {
   return (
-    <div className="min-h-screen bg-white text-[#101010]">
+    <div className="min-h-screen bg-transparent text-[#101010]">
       <Header />
 
       <PageHeader

@@ -74,7 +74,7 @@ export function OurStory({ stories = storySlides }: OurStoryProps) {
   return (
     <section
       id="our-story"
-      className="relative w-full py-16 sm:py-20 md:py-24 bg-white overflow-hidden"
+      className="relative w-full py-16 sm:py-20 md:py-24 bg-transparent overflow-hidden"
       aria-labelledby="story-heading"
       onTouchStart={handleTouchStart}
       onTouchEnd={handleTouchEnd}
@@ -100,7 +100,7 @@ export function OurStory({ stories = storySlides }: OurStoryProps) {
         {/* 2-Column Responsive Editorial Split */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 lg:gap-10 items-stretch">
           {/* Left: Immersive Royal Archway Card */}
-          <div className="lg:col-span-7 relative flex flex-col justify-end min-h-[460px] sm:min-h-[520px] lg:min-h-[580px] rounded-2xl sm:rounded-3xl overflow-hidden border border-[#ECE7DE] shadow-[0_8px_30px_rgb(0,0,0,0.06)] bg-[#251911]">
+          <div className="lg:col-span-7 scroll-reveal animate__animated animate__fadeInLeft animate__slow relative flex flex-col justify-end min-h-[460px] sm:min-h-[520px] lg:min-h-[580px] rounded-2xl sm:rounded-3xl overflow-hidden border border-[#ECE7DE] shadow-[0_8px_30px_rgb(0,0,0,0.06)] bg-[#251911]">
             {/* Background Image */}
             <div
               key={`bg-${activeStoryIndex}`}
@@ -162,7 +162,7 @@ export function OurStory({ stories = storySlides }: OurStoryProps) {
           {/* Right: Companion Fashion Look Card + Controls */}
           <div className="lg:col-span-5 flex flex-col justify-between gap-5">
             {/* Visual Look Card */}
-            <div className="relative w-full h-[360px] sm:h-[420px] lg:h-[490px] rounded-2xl sm:rounded-3xl overflow-hidden border border-[#ECE7DE] shadow-[0_8px_30px_rgb(0,0,0,0.06)] bg-[#EAE4DC] group">
+            <div className="relative w-full h-[360px] sm:h-[420px] lg:h-[490px] scroll-reveal animate__animated animate__fadeInRight animate__slow rounded-2xl sm:rounded-3xl overflow-hidden border border-[#ECE7DE] shadow-[0_8px_30px_rgb(0,0,0,0.06)] bg-[#EAE4DC] group">
               <div
                 key={`side-${activeStoryIndex}`}
                 className={cn(

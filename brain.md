@@ -1,4 +1,4 @@
-# TATVDHAN JAIPUR — ARCHITECTURAL & DESIGN SYSTEM BLUEPRINT (`brain.md`)
+# Tatvadhan JAIPUR — ARCHITECTURAL & DESIGN SYSTEM BLUEPRINT (`brain.md`)
 **Document Version:** 2.0.0 (Post-Audit & Reconstruction Edition)  
 **System Architecture:** Next.js 16 (React 19) + Vinext / Vite 8 + Cloudflare Workers + Tailwind CSS v4  
 **Classification:** Master Source-of-Truth Blueprint for Engineering, Design & QA  
@@ -7,7 +7,7 @@
 
 ## 1. Executive Summary & Technology Stack
 
-The **Tatvdhan Jaipur — The Wedding Chapter** web application is a high-fashion, editorial digital flagship representing the heritage, craftsmanship, and modern bespoke silhouettes of luxury bridal couture from Jaipur, India.
+The **Tatvadhan Jaipur — The Wedding Chapter** web application is a high-fashion, editorial digital flagship representing the heritage, craftsmanship, and modern bespoke silhouettes of luxury bridal couture from Jaipur, India.
 
 ### Core Technology Stack:
 - **Framework:** Next.js 16 (`next@16.3.4`)
@@ -15,7 +15,7 @@ The **Tatvdhan Jaipur — The Wedding Chapter** web application is a high-fashio
 - **Runtime & Bundler:** Vinext (`vinext@1.0.0-beta.5`) running Vite 8 (`vite@8.0.13`)
 - **Cloud Infrastructure:** Cloudflare Workers runtime via `@cloudflare/vite-plugin` and Wrangler 4.92
 - **Styling Architecture:** Tailwind CSS v4 (`tailwindcss@4.2.1`, `@tailwindcss/postcss@4.2.1`), PostCSS, `@theme inline` design tokens, and vendor shadcn animation rules (`tw-animate-css`)
-- **Component Model:** Decoupled, accessible TypeScript client components under `components/tatvdhan/`, orchestrated cleanly by a 46-line `app/page.tsx`
+- **Component Model:** Decoupled, accessible TypeScript client components under `components/Tatvadhan/`, orchestrated cleanly by a 46-line `app/page.tsx`
 
 ---
 
@@ -154,7 +154,7 @@ The **Tatvdhan Jaipur — The Wedding Chapter** web application is a high-fashio
 
 ---
 
-### Section 1: Header (`components/tatvdhan/Header.tsx`)
+### Section 1: Header (`components/Tatvadhan/Header.tsx`)
 - **Structure:**
   1. **Black Masthead Bar (`.masthead`):**
      - Height: `72px` (Desktop) / `62px` (Mobile)
@@ -170,20 +170,20 @@ The **Tatvdhan Jaipur — The Wedding Chapter** web application is a high-fashio
 
 ---
 
-### Section 2: Video Hero (`components/tatvdhan/Hero.tsx`)
+### Section 2: Video Hero (`components/Tatvadhan/Hero.tsx`)
 - **Dimensions:** `min-height: min(69vw, 650px); height: 66vh; max-height: 700px;` (Mobile: `min-height: 560px; height: 78vh`).
 - **Layers & Stacking Context:**
   1. **Eager Fallback Image (`.hero-image`):** `/images/image_18.webp` (`object-fit: cover`, `object-position: center 50%`, mobile `53% center`). Guarantees zero layout shift.
   2. **HTML5 Background Video (`.hero-video`):** Full-bleed video element with `autoplay`, `muted`, `loop`, `playsInline`, `poster="/images/image_18.webp"`. Configured for `/videos/hero.mp4` and `/videos/hero.webm`.
   3. **Atmospheric Dark Gradient (`.hero-shade`):** Linear gradient from `rgba(0,0,0,0.12)` down to `rgba(0,0,0,0.66)`.
   4. **Preserved Hero Copy Stack (`.hero-content`, `z-index: 2`):**
-     - Eyebrow: `Tatvdhan · Jaipur` in `#f0d060`
+     - Eyebrow: `Tatvadhan · Jaipur` in `#f0d060`
      - Title: `The Wedding Chapter` in Bodoni Serif `clamp(39px, 5.6vw, 75px)`
      - Action CTA: `Discover the collection ↓` bordered link to `#collection`
 
 ---
 
-### Section 3: Editorial / Lorem Lipsum (`components/tatvdhan/EditorialSection.tsx`)
+### Section 3: Editorial / Lorem Lipsum (`components/Tatvadhan/EditorialSection.tsx`)
 - **Layout Architecture:** Strict 3-column, 2-row unified grid (`repeat(3, 1fr)`) with `gap: 13px` directly matching reference Image 2 and PDF.
 - **Row 1:**
   - **Cell (1, 1) — Text Block (`.editorial-text-card`):**
@@ -200,7 +200,7 @@ The **Tatvdhan Jaipur — The Wedding Chapter** web application is a high-fashio
 
 ---
 
-### Section 4: Collection Story & Occasions (`components/tatvdhan/CollectionSection.tsx`)
+### Section 4: Collection Story & Occasions (`components/Tatvadhan/CollectionSection.tsx`)
 - **Top Heading (`.center-heading`):** Centered text block (max-width 640px) with eyebrow `Made for the moments you remember` and H2 `Lorem Lipsum`.
 - **3-Look Card Row (`#occasions`, `.look-row`):**
   - 3-column grid (`repeat(3, 1fr)`), height 380px (mobile `min(62vw, 275px)`), background `#e7dfd2`.
@@ -214,28 +214,28 @@ The **Tatvdhan Jaipur — The Wedding Chapter** web application is a high-fashio
 
 ---
 
-### Section 5: Media & House Journal (`components/tatvdhan/JournalSection.tsx`)
+### Section 5: Media & House Journal (`components/Tatvadhan/JournalSection.tsx`)
 - **Surface:** `#f5f3ef` warm parchment tone.
-- **Header Row:** Flex container with eyebrow `From the house`, H2 `News & collections`, and right link `Discover Tatvdhan ↗`.
+- **Header Row:** Flex container with eyebrow `From the house`, H2 `News & collections`, and right link `Discover Tatvadhan ↗`.
 - **4-Card Article Grid (`.journal-grid`):**
   - 4-column desktop grid (2-column on tablet and mobile) with 174px card figures on `#d1c2ad`.
   - Card 1: *Araico Collection launch* (`image_04.webp`)
   - Card 2: *Araico Collection launch* (`image_18.webp`, `object-position: center 45%`)
   - Card 3: *Clothing Drive 2020* (`image_02.webp`, `object-position: center 50%`)
   - Card 4: *F/W 2020 Sneak Peek* (`image_05.webp`)
-  - Metadata: Date `Tatvdhan Journal · Jaipur`, 21px serif title, summary copy, and hoverable gold corner arrow (`↗`).
+  - Metadata: Date `Tatvadhan Journal · Jaipur`, 21px serif title, summary copy, and hoverable gold corner arrow (`↗`).
 - **Full-Width Campaign Banner (`.campaign-image`):**
   - Height 300px (220px mobile), 17px rounded corners, dark base `#251911`, image `/images/image_04.webp`.
   - Dark gradient fade with overlay title `Explore the Wedding Chapter ↗` in 25px Bodoni serif.
 
 ---
 
-### Section 6: Our Story (`components/tatvdhan/OurStory.tsx`)
+### Section 6: Our Story (`components/Tatvadhan/OurStory.tsx`)
 - **Layout Architecture:** Asymmetric 2-column layout (`1.25fr 0.62fr`) with fluid gap `clamp(34px, 7vw, 94px)`.
 - **Left Canvas (`.story-backdrop`):**
   - Deep espresso background `#433027`, minimum height 510px (440px tablet).
   - Background image `/images/image_31.webp` with warm 90% darkening overlay.
-  - Floating Copy: Eyebrow `Rooted in tradition` in `#ecd18b`, H2 `Our Story` (`clamp(35px, 4vw, 53px)`), narrative paragraph, and italic signoff `Tatvdhan — Rooted in tradition. Made for today.` in `#f1d58f`.
+  - Floating Copy: Eyebrow `Rooted in tradition` in `#ecd18b`, H2 `Our Story` (`clamp(35px, 4vw, 53px)`), narrative paragraph, and italic signoff `Tatvadhan — Rooted in tradition. Made for today.` in `#f1d58f`.
 - **Right Column (`.story-side`):**
   - Companion portrait `/images/image_03.webp` (height 365px, `object-position: center 40%`).
   - Action link: `Discover our story ↗` with bottom border `#d8d2ca`.
@@ -244,16 +244,16 @@ The **Tatvdhan Jaipur — The Wedding Chapter** web application is a high-fashio
 
 ---
 
-### Section 7: The Man Himself (`components/tatvdhan/FounderSection.tsx`)
+### Section 7: The Man Himself (`components/Tatvadhan/FounderSection.tsx`)
 - **Layout Architecture:** Strict 3-column horizontal grid (`0.83fr 0.8fr 1fr`), fluid gap `clamp(36px, 6vw, 84px)`.
 - **Column 1 (`.founder-intro`):** Eyebrow `A vision for today`, H2 `The Man Himself` (`clamp(29px, 3vw, 42px)`), founder philosophy intro.
 - **Column 2 (`.founder-portrait`):** Height 390px (360px tablet, 260px mobile), 5px rounded corners, portrait image `/images/image_34.webp` (`object-position: center 23%`).
-- **Column 3 (`.founder-note`):** Extended vision statement, founder signature `Vinayak Agarwal` (27px serif italic, color `#6b482c`), and uppercase sub-caption `FOUNDER, TATVDHAN JAIPUR`.
+- **Column 3 (`.founder-note`):** Extended vision statement, founder signature `Vinayak Agarwal` (27px serif italic, color `#6b482c`), and uppercase sub-caption `FOUNDER, Tatvadhan JAIPUR`.
 - **Responsive Adaptations:** Tablet collapses to 2 columns with founder note spanning full width below; mobile rearranges to an asymmetrical 2-column layout with intro on top.
 
 ---
 
-### Section 8: Gallery Carousel Showcase (`components/tatvdhan/GalleryCarousel.tsx`)
+### Section 8: Gallery Carousel Showcase (`components/Tatvadhan/GalleryCarousel.tsx`)
 - **Visual Presentation:** Pure white canvas (`#ffffff`) with clean, centered sans-serif heading and subtitle directly matching the PDF reference.
   - Heading: `Lorem Lipsum` in clean sans display font (`clamp(34px, 3.5vw, 44px)`).
   - Subtitle: `Lorem Ipsum is simply dummy text of the printing and typesetting industry.`
@@ -268,7 +268,7 @@ The **Tatvdhan Jaipur — The Wedding Chapter** web application is a high-fashio
 
 ---
 
-### Section 9: FAQ Accordion (`components/tatvdhan/FAQSection.tsx`)
+### Section 9: FAQ Accordion (`components/Tatvadhan/FAQSection.tsx`)
 - **Layout Architecture:** 2-column layout (`0.9fr 1.1fr`) with fluid gap `clamp(55px, 8vw, 116px)`.
 - **Left Column (`.faq-copy`):**
   - Eyebrow: `Here to help`
@@ -280,7 +280,7 @@ The **Tatvdhan Jaipur — The Wedding Chapter** web application is a high-fashio
 
 ---
 
-### Section 10: Site Footer & Newsletter (`components/tatvdhan/Footer.tsx`)
+### Section 10: Site Footer & Newsletter (`components/Tatvadhan/Footer.tsx`)
 - **Canvas:** Pure Black `#000000` with ivory text `#f4f0e8`.
 - **Column 1 — Newsletter & Physical Stores:**
   - Eyebrow `Stay in the know` (`#d0ad5f`), 24px Bodoni serif title.

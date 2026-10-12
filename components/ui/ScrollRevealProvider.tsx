@@ -18,6 +18,7 @@ export function ScrollRevealProvider() {
       "main > div > section",
       "article",
       ".scroll-reveal",
+      ".animate__animated:not(.animate-on-load)",
       "section h2",
       "section h1",
       ".look-pair-row",
@@ -42,14 +43,17 @@ export function ScrollRevealProvider() {
           if (entry.isIntersecting) {
             const target = entry.target as HTMLElement;
             target.classList.add("is-visible");
+            target.querySelectorAll<HTMLElement>(".animate__animated").forEach((child) => {
+              child.classList.add("is-visible");
+            });
             observer.unobserve(target);
           }
         });
       },
       {
         root: null,
-        rootMargin: "0px 0px -60px 0px", // Trigger when 60px into viewport
-        threshold: 0.08,
+        rootMargin: "0px 0px -40px 0px", // Trigger when 40px into viewport
+        threshold: 0.05,
       }
     );
 
@@ -62,6 +66,9 @@ export function ScrollRevealProvider() {
       // If already in the upper viewport on load, reveal immediately
       if (rect.top < windowHeight * 0.95 && rect.bottom > 0) {
         el.classList.add("scroll-reveal", "is-visible");
+        el.querySelectorAll<HTMLElement>(".animate__animated").forEach((child) => {
+          child.classList.add("is-visible");
+        });
       } else {
         // Tag as scroll-reveal and calculate stagger if in a grid/list
         el.classList.add("scroll-reveal");
@@ -75,24 +82,6 @@ export function ScrollRevealProvider() {
         }
 
         observer.observe(el);
-      }
-    });
-
-    // Also observe all major images on the page for luxury fade-in rise
-    const images = Array.from(
-      document.querySelectorAll<HTMLElement>("main img")
-    );
-
-    images.forEach((img) => {
-      if (img.classList.contains("is-visible") || img.closest(".no-scroll-reveal"))
-        return;
-
-      const rect = img.getBoundingClientRect();
-      if (rect.top < windowHeight * 0.95 && rect.bottom > 0) {
-        img.classList.add("scroll-reveal-img", "is-visible");
-      } else {
-        img.classList.add("scroll-reveal-img");
-        observer.observe(img);
       }
     });
 

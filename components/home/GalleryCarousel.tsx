@@ -187,16 +187,16 @@ export function GalleryCarousel({
   }
 
   return (
-    <section className="gallery-showcase-section" aria-labelledby="gallery-heading">
-      <div className="gallery-header">
-        <h2 id="gallery-heading">{title}</h2>
-        <p>{description}</p>
+    <section className="py-[85px] pb-[105px] max-[900px]:py-[65px] max-[900px]:pb-[80px] max-[600px]:py-[50px] max-[600px]:pb-[65px] bg-white overflow-hidden" aria-labelledby="gallery-heading">
+      <div className="max-w-[580px] mx-auto text-center px-[20px]">
+        <h2 id="gallery-heading" className="font-sans text-[clamp(34px,3.5vw,44px)] max-[600px]:text-[32px] font-normal text-black leading-[1.15] mb-[12px]">{title}</h2>
+        <p className="text-[#222] text-[13px] max-[600px]:text-[12px] leading-[1.6] max-w-[380px] max-[600px]:max-w-[320px] mx-auto">{description}</p>
       </div>
 
       <div
-        className="gallery-track-wrap"
+        className="relative w-full overflow-hidden py-[60px] max-[900px]:pt-[36px] max-[600px]:py-[36px] [&::-webkit-scrollbar]:hidden"
         ref={containerRef}
-        aria-label="Tatvdhan collection slider"
+        aria-label="Tatvadhan collection slider"
         tabIndex={0}
         onKeyDown={handleKeyDown}
         onMouseEnter={() => setIsPaused(true)}
@@ -205,7 +205,7 @@ export function GalleryCarousel({
         onTouchEnd={handleTouchEnd}
       >
         <div
-          className="gallery-track"
+          className="flex items-center gap-[20px] max-[600px]:gap-[14px] w-max will-change-transform max-[900px]:justify-start max-[900px]:px-[24px] max-[600px]:px-[18px] max-[900px]:snap-x max-[900px]:snap-mandatory"
           ref={trackRef}
           onTransitionEnd={handleTransitionEnd}
           style={{
@@ -225,8 +225,10 @@ export function GalleryCarousel({
                   cardRefs.current[itemIndex] = el;
                 }}
                 className={
-                  "gallery-card " +
-                  (isCenter ? "gallery-card-center" : "gallery-card-side")
+                  "relative shrink-0 rounded-[22px] overflow-hidden bg-[#e8dfd4] cursor-pointer select-none max-[900px]:snap-center transition-[width,height,box-shadow,opacity] duration-750 ease-[cubic-bezier(0.25,1,0.5,1)] group " +
+                  (isCenter
+                    ? "w-[clamp(320px,31vw,450px)] max-[600px]:w-[285px] h-[clamp(430px,42vw,600px)] max-[600px]:h-[380px] shadow-[0_24px_60px_-12px_rgba(0,0,0,0.18),0_12px_24px_-8px_rgba(0,0,0,0.08)] opacity-100 z-10"
+                    : "w-[clamp(250px,24vw,350px)] max-[600px]:w-[220px] h-[clamp(335px,32vw,470px)] max-[600px]:h-[295px] opacity-88")
                 }
                 onClick={() => {
                   setIsTransitioning(true);
@@ -240,6 +242,8 @@ export function GalleryCarousel({
                   src={look.file}
                   alt={look.alt}
                   loading="lazy"
+                  className={`w-full h-full object-cover rounded-[22px] pointer-events-none transition-transform duration-600 ease-[cubic-bezier(0.2,0.7,0.3,1)] group-hover:scale-[1.025] ${isCenter ? "object-[center_30%]" : "object-[center_35%]"
+                    }`}
                 />
               </figure>
             );

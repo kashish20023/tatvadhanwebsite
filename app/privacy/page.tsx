@@ -4,13 +4,13 @@ import { PageHeader } from "@/components/layout/PageHeader";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Privacy & Cookies Policy | Tatvdhan Jaipur",
-  description: "Privacy and cookies policy for clients and visitors of Tatvdhan Jaipur.",
+  title: "Privacy & Cookies Policy | Tatvadhan Jaipur",
+  description: "Privacy and cookies policy for clients and visitors of Tatvadhan Jaipur.",
 };
 
 export default function PrivacyPage() {
   return (
-    <div className="min-h-screen bg-white text-[#101010]">
+    <div className="min-h-screen bg-transparent text-[#101010]">
       <Header />
 
       <PageHeader
@@ -24,7 +24,7 @@ export default function PrivacyPage() {
         <section>
           <h2 className="font-serif text-xl text-[#12100E] mb-3">1. Information Collection</h2>
           <p>
-            Tatvdhan Jaipur collects personal identification details (name, email address, physical measurements, and shipping information) solely to process bespoke couture commissions, private fitting appointments, and newsletter requests.
+            Tatvadhan Jaipur collects personal identification details (name, email address, physical measurements, and shipping information) solely to process bespoke couture commissions, private fitting appointments, and newsletter requests.
           </p>
         </section>
 

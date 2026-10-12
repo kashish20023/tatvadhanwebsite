@@ -32,13 +32,13 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
       </nav>
 
       <div className="pt-8 border-t border-[#ECE7DE] flex flex-col gap-3">
-        <p className="text-[10px] uppercase tracking-[0.2em] text-[#93753E]">Tatvdhan Atelier</p>
+        <p className="text-[10px] uppercase tracking-[0.2em] text-[#93753E]">Tatvadhan Atelier</p>
         <p className="text-xs text-[#666056]">Jaipur, Rajasthan, India</p>
         <a
-          href="mailto:contact@tatvdhan.com"
+          href="mailto:contact@Tatvadhan.com"
           className="text-xs text-[#12100E] underline tracking-wide"
         >
-          contact@tatvdhan.com
+          contact@Tatvadhan.com
         </a>
       </div>
     </div>

@@ -36,7 +36,7 @@ export function OccasionChapter({
             {description}
           </p>
           <a
-            href="mailto:contact@tatvdhan.com?subject=Occasion%20Styling%20Inquiry"
+            href="mailto:contact@Tatvadhan.com?subject=Occasion%20Styling%20Inquiry"
             className="inline-flex items-center gap-2 text-[9px] uppercase tracking-[0.2em] font-sans font-medium text-[#12100E] border-b border-[#12100E] pb-1 hover:text-[#93753E] hover:border-[#93753E] transition-colors"
           >
             <span>Consult Atelier Stylist</span>
