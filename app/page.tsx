@@ -26,6 +26,7 @@ export default function HomePage() {
       <Hero />
       <EditorialSection />
       <CollectionSection />
+
       <JournalSection />
       <OurStory />
       <FounderSection />
