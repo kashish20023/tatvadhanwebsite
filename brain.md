@@ -40,7 +40,7 @@ The **Tatvadhan Jaipur — The Wedding Chapter** web application is a high-fashi
 |---|---|---|---|---|---|---|---|
 | **Hero Title** | `.hero h1` | Serif | `clamp(39px, 5.6vw, 75px)` | 500 | `0.025em` | `1.06` | Title Case |
 | **Hero Eyebrow** | `.hero-eyebrow` | Sans | `9px` | 600 | `0.2em` | `1.6` | Uppercase (`#f0d060`) |
-| **Standard Eyebrow** | `.eyebrow` | Sans | `9px` (Mobile: `8px–9px`) | 600 | `0.2em` | `1.6` | Uppercase (`#705030`) |
+| **Standard Eyebrow** | `.eyebrow` | Sans | `9px` (Mobile: `8px–9px`) | 600 | `0.2em` | `1.6` | Uppercase (`#a57c36`) |
 | **Primary Section Headings** | `.editorial-copy h2`, `.center-heading h2`, `.journal-heading h2` | Serif | `clamp(31px, 3vw, 43px)` | 500 | `-0.02em` | `1.1` | Title Case |
 | **Story Backdrop Heading** | `.story-copy h2` | Serif | `clamp(35px, 4vw, 53px)` | 500 | Normal | `1.1` | Title Case |
 | **Founder Heading** | `.founder-intro h2` | Serif | `clamp(29px, 3vw, 42px)` | 500 | Normal | `1.05` | Title Case |
@@ -76,7 +76,7 @@ The **Tatvadhan Jaipur — The Wedding Chapter** web application is a high-fashi
   --ivory: #f0f0f0;
   --gold: #e8c35a;
   --heritage: #301010;
-  --warm-brown: #705030;
+  --warm-brown: #a57c36;
   --terracotta: #b07050;
   --peach: #c09070;
   --journal-bg: #f5f3ef;
@@ -104,7 +104,7 @@ The **Tatvadhan Jaipur — The Wedding Chapter** web application is a high-fashi
 | **Campaign Surface** | `#251911` | Dark bronze undertone on full-bleed banner card |
 | **Antique Gold Accents** | `#e8c35a`, `#d0ad5f`, `#f1d58f` | Text selection, eyebrows, submit buttons, and signoff text |
 | **Action Gold Links** | `#a28349`, `#9b7530` | Underlined links, hover states, and corner arrows |
-| **Warm Earthy Umber** | `#705030` | Eyebrow badges and sub-headings |
+| **Warm Earthy Umber** | `#a57c36` | Eyebrow badges and sub-headings |
 | **Muted Copy Gray** | `#62605d`, `#69645d`, `#77716a` | Secondary descriptive text |
 | **Neutral Dividers** | `#ece9e3`, `#dedbd6`, `#eeeae4` | Header border, FAQ dividers, and mobile menu separators |
 | **Dark Borders** | `#38342e`, `#76684d` | Footer horizontal rule and newsletter input underline |
@@ -286,7 +286,7 @@ The **Tatvadhan Jaipur — The Wedding Chapter** web application is a high-fashi
   - Eyebrow `Stay in the know` (`#d0ad5f`), 24px Bodoni serif title.
   - Inline underline form (`border-bottom: 1px solid #76684d`) with transparent input and gold submit CTA (`Sign up ↗`).
   - Privacy consent checkbox and live feedback message on submit (*"Thank you for signing up."*).
-  - Physical store counter: `5 Stores worldwide` in 22px Bodoni serif with `Find a Store ↗` action link.
+  - Physical store counter: `5 Stores pan india` in 22px Bodoni serif with `Find a Store ↗` action link.
 - **Columns 2, 3 & 4 — Information Directories:**
   - **The Company:** About Us, Sustainability, Couture Process, Runways, Association, Career.
   - **Need Help:** Contact Us, Visit Store, Shipping, FAQ's, Profile.

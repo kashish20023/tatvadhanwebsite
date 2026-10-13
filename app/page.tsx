@@ -5,6 +5,7 @@ import { EditorialSection } from "@/components/home/EditorialSection";
 import { CollectionSection } from "@/components/home/CollectionSection";
 import { JournalSection } from "@/components/home/JournalSection";
 import { OurStory } from "@/components/home/OurStory";
+import { MotionAtelierSection } from "@/components/home/MotionAtelierSection";
 import { FounderSection } from "@/components/home/FounderSection";
 import { FAQSection } from "@/components/home/FAQSection";
 import { CardCarousel } from "@/components/ui/card-carousel";
@@ -29,6 +30,7 @@ export default function HomePage() {
 
       <JournalSection />
       <OurStory />
+      <MotionAtelierSection />
       <FounderSection />
 
       {/* 3D Coverflow Card Carousel showcasing authentic Jaipur couture */}
@@ -36,7 +38,7 @@ export default function HomePage() {
         <CardCarousel
           images={homeCarouselImages}
           autoplayDelay={2500}
-          showPagination={true}
+          showPagination={false}
           showNavigation={true}
           badgeText="Atelier Showcase"
           title="The Couture In Motion"

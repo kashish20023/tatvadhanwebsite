@@ -1,88 +1,167 @@
 import Link from "next/link";
-import { journalStories } from "@/data/occasions";
 import type { JournalStory } from "@/types/occasion";
+import { OriginButton } from "@/components/ui/origin-button";
+
+interface JournalCardItem {
+  category: string;
+  title: string;
+  description: string;
+  file: string;
+  alt: string;
+  href: string;
+}
+
+const defaultJournalItems: JournalCardItem[] = [
+  {
+    category: "COLLECTION LAUNCH",
+    title: "Aarico Collection",
+    description: "An homage to regal court dress featuring micro-zardozi wire and heritage velvet accents.",
+    file: "/images/newcollection.jpg",
+    alt: "Aarico Collection Launch",
+    href: "/collection",
+  },
+  {
+    category: "THE WEDDING CHAPTER",
+    title: "The Wedding Chapter",
+    description: "Photographed on location within Amber Palace, capturing dialogue between carved sandstone and silk.",
+    file: "/images/image_18.webp",
+    alt: "The Wedding Chapter",
+    href: "/collection",
+  },
+  {
+    category: "STUDY 2026",
+    title: "Artisanal Karigar Study",
+    description: "Documenting generational handloom techniques preserved across master artisan families in Rajasthan.",
+    file: "/images/standi1.jpg",
+    alt: "Artisanal Karigar Study 2026",
+    href: "/our-story",
+  },
+  {
+    category: "FESTIVE COLLECTION",
+    title: "Autumn / Winter Peek",
+    description: "Warm blush, champagne gold, and muted ivory palettes designed for timeless winter unions.",
+    file: "/images/NewPerson1.jpg",
+    alt: "Autumn / Winter Sneak Peek",
+    href: "/our-story",
+  },
+];
 
 interface JournalSectionProps {
   eyebrow?: string;
   heading?: string;
+  subtitle?: string;
   ctaText?: string;
   ctaHref?: string;
   stories?: JournalStory[];
-  campaignTitle?: string;
-  campaignImage?: string;
-  campaignHref?: string;
 }
 
 export function JournalSection({
-  eyebrow = "From the house",
-  heading = "News & collections",
-  ctaText = "Discover Tatvadhan",
+  eyebrow = "FROM THE HOUSE",
+  heading = "News & Collections",
+  subtitle = "Explore our latest launches, featured stories and timeless collections, crafted for the modern connoisseur.",
+  ctaText = "DISCOVER ALL",
   ctaHref = "/media",
-  stories = journalStories,
-  campaignTitle = "Explore the Wedding Chapter",
-  campaignImage = "/images/image_04.webp",
-  campaignHref = "/collection",
 }: JournalSectionProps) {
   return (
-    <section id="media" className="py-[86px] pb-[94px] max-sm:py-0 bg-transparent" aria-labelledby="journal-heading">
-      <div className="w-[min(1240px,calc(100%-80px))] max-[900px]:w-[min(calc(100%-48px),720px)] max-[600px]:w-[calc(100%-36px)] mx-auto">
-        <div className="scroll-reveal flex items-end justify-between mb-[33px] max-[600px]:flex-col max-[600px]:items-start max-[600px]:gap-[14px]">
-          <div>
-            <p className="text-[#705030] text-[9px] font-semibold tracking-[0.2em] leading-[1.6] uppercase">{eyebrow}</p>
-            <h2 id="journal-heading" className="mt-[9px] font-serif text-[clamp(31px,3vw,42px)] font-bold tracking-[-0.02em] leading-[1.1] text-[#a57c36]">{heading}</h2>
+    <section
+      id="media"
+      className="relative w-full py-16 sm:py-20 md:py-24 bg-[#FBF7EE] overflow-hidden"
+      aria-labelledby="journal-heading"
+    >
+      {/* Responsive Background Image (2nd image provided by user) adjusting smoothly across screen sizes */}
+      <div
+        className="absolute inset-0 pointer-events-none select-none bg-no-repeat transition-all duration-300
+          bg-cover bg-center
+          sm:bg-[length:100%_100%]
+          lg:bg-cover lg:bg-center"
+        style={{
+          backgroundImage: `url('/images/news-collections-bg.png')`,
+        }}
+        aria-hidden="true"
+      />
+
+      {/* Main Content Container */}
+      <div className="relative z-10 w-[min(1320px,calc(100%-48px))] max-sm:w-[calc(100%-32px)] mx-auto">
+        {/* Header Section */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10 sm:mb-12">
+          <div className="max-w-[700px]">
+            {/* Heading */}
+            <h2
+              id="journal-heading"
+              className="font-serif text-[36px] sm:text-[46px] md:text-[54px] font-bold text-[#2A2118] tracking-[-0.02em] leading-[1.08] mb-3"
+            >
+              {heading}
+            </h2>
           </div>
-          <Link className="inline-flex items-center gap-[24px] pb-[8px] border-b border-[#a28349] text-[#1a1713] text-[9px] tracking-[0.12em] uppercase transition-colors duration-200 hover:text-[#9b7530] m-0 mb-[5px] ml-[20px] max-[600px]:m-0" href={ctaHref}>
-            {ctaText} <span className="text-[#a28349] text-[14px]" aria-hidden="true">↗</span>
-          </Link>
+
+          {/* Discover All Button matching existing layout */}
+          <div className="self-start md:self-end">
+            <Link href={ctaHref}>
+              <OriginButton
+                className="border-[#a57c36] text-[#a57c36] hover:text-white text-[9.5px] font-medium tracking-[0.18em] border rounded-lg uppercase h-auto py-[10px] px-[28px] bg-transparent group"
+              >
+                <span className="transition-colors duration-300 group-hover:text-white">{ctaText}</span>
+                <span className="text-[#a28349] group-hover:text-white group-hover:translate-x-1 transition-all duration-300 text-[12px]" aria-hidden="true">
+                  →
+                </span>
+              </OriginButton>
+            </Link>
+          </div>
         </div>
 
-        <div id="journal" className="grid grid-cols-4 max-[900px]:grid-cols-2 gap-[17px] max-[900px]:gap-y-[30px] max-[600px]:gap-x-[12px] max-[600px]:gap-y-[25px]" aria-label="House journals and news updates">
-          {stories.map((story, index) => (
+        {/* 4 Cards Grid */}
+        <div
+          id="journal"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6"
+          aria-label="House collections and journal updates"
+        >
+          {defaultJournalItems.map((item, index) => (
             <Link
-              className="journal-card relative flex flex-col min-w-0 group"
-              href={story.href || (index < 2 ? "/collection" : "/our-story")}
-              key={story.title + index}
-              data-animation="animate__fadeInUp"
-              style={{ animationDelay: `${index * 120}ms` }}
+              key={item.title + index}
+              href={item.href}
+              className="group relative flex flex-col min-w-0 bg-[#FFFDF9]/95 border border-[#DFD3C0] hover:border-[#C5A877] rounded-tl-[36px] sm:rounded-tl-[44px] rounded-tr-md rounded-bl-md rounded-br-[20px] overflow-hidden transition-all duration-500 hover:-translate-y-1.5 shadow-[0_4px_20px_rgba(40,30,15,0.04)] hover:shadow-[0_14px_35px_rgba(158,120,56,0.12)]"
             >
-              <figure className="overflow-hidden h-[174px] max-[900px]:h-[230px] max-[600px]:h-[145px] bg-[#d1c2ad]">
+              {/* Corner Architectural Arch Flourish */}
+              <div
+                className="absolute top-1.5 left-1.5 w-7 h-7 border-t border-l border-[#C8A870]/70 rounded-tl-[20px] pointer-events-none z-20"
+                aria-hidden="true"
+              />
+
+              {/* Card Image with Mughal Arch Top-Left Curve */}
+              <figure className="relative w-full h-[200px] sm:h-[210px] lg:h-[195px] xl:h-[215px] overflow-hidden bg-[#E8E0D2] rounded-tl-[34px] sm:rounded-tl-[42px] border-b border-[#EAE1D1]">
                 <img
-                  src={story.file}
-                  alt={story.alt}
+                  src={item.file}
+                  alt={item.alt}
                   loading="lazy"
-                  className={`w-full h-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.2,0.7,0.3,1)] group-hover:scale-[1.035] ${index === 1 ? "object-[center_45%]" : index === 2 ? "object-[center_50%]" : "object-center"
-                    }`}
+                  className="w-full h-full object-cover object-center transition-transform duration-700 ease-[cubic-bezier(0.2,0.7,0.3,1)] group-hover:scale-[1.04]"
                 />
               </figure>
-              <p className="mt-[18px] text-[#8c795e] pt-1 text-[8px] tracking-[0.13em] uppercase">{story.date || "Tatvadhan Journal · Jaipur"}</p>
-              <h3 className="max-w-[90%] mt-[9px] font-serif text-[21px] max-[600px]:text-[19px] font-medium leading-[1.1] text-[#101010]">{story.title}</h3>
-              <p className="max-w-[250px] mt-[9px] text-[#69645d] text-[10px] max-[600px]:text-[9px] leading-[1.8]">
-                {story.description ||
-                  "News write-ups offer a great way to let clients know about new products and services, events, awards, and more!"}
-              </p>
-              <span className="absolute right-0 bottom-[2px] text-[#9b7530] text-[17px] max-[600px]:hidden" aria-hidden="true">
-                ↗
-              </span>
+
+              {/* Card Body */}
+              <div className="flex flex-col flex-1 p-5 sm:p-6 pb-5">
+                {/* Category Eyebrow */}
+                <div className="flex items-center gap-1.5 mb-2">
+                  <p className="text-[#201A14] text-[12px] sm:text-[14px] font-semibold tracking-[0.22em] uppercase">
+                    {item.category}
+                  </p>
+                </div>
+
+                {/* Card Title */}
+                <h3 className="text-[#9E7838] font-serif text-[26px] sm:text-[26px] font-semibold leading-[1.2] mb-2.5 transition-colors duration-300">
+                  {item.title}
+                </h3>
+
+                {/* Card Description */}
+                <p className="text-[#6D6355] text-[14px] sm:text-[16px] leading-[1.65] font-normal mb-6 flex-1">
+                  {item.description}
+                </p>
+              </div>
             </Link>
           ))}
         </div>
-
-        <Link
-          className="relative block h-[300px] max-[600px]:h-[220px] mt-[56px] max-[600px]:mt-[38px] rounded-[17px] max-[600px]:rounded-[11px] bg-[#251911] text-white overflow-hidden group after:absolute after:inset-x-0 after:bottom-0 after:top-[45%] after:content-[''] after:bg-gradient-to-t after:from-black/56 after:to-transparent after:pointer-events-none"
-          href={campaignHref}
-          aria-label={campaignTitle}
-        >
-          <img
-            src={campaignImage}
-            alt={campaignTitle}
-            loading="lazy"
-            className="w-full h-full object-cover  object-[center_49%] transition-transform duration-700 ease-[cubic-bezier(0.2,0.7,0.3,1)] group-hover:scale-[1.035]"
-          />
-          <span className="absolute z-[1] right-[28px] bottom-[24px] left-[28px] max-[600px]:right-[16px] max-[600px]:bottom-[16px] max-[600px]:left-[16px] flex justify-between items-center text-[#fff] font-serif text-[25px] max-[600px]:text-[20px]">
-            {campaignTitle} <span className="text-[#e8c35a] font-sans text-[17px]" aria-hidden="true">↗</span>
-          </span>
-        </Link>
       </div>
     </section>
   );
 }
+
+export default JournalSection;

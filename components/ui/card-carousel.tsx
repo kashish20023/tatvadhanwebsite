@@ -33,7 +33,7 @@ export interface CarouselProps {
 export const CardCarousel: React.FC<CarouselProps> = ({
   images,
   autoplayDelay = 2200,
-  showPagination = true,
+  showPagination = false,
   showNavigation = true,
   badgeText = "Latest component",
   title = "Card Carousel",
@@ -96,21 +96,6 @@ export const CardCarousel: React.FC<CarouselProps> = ({
 
   .card-carousel-root .swiper-pagination {
     bottom: 12px !important;
-  }
-
-  .card-carousel-root .swiper-pagination-bullet {
-    background: #101010;
-    opacity: 0.22;
-    width: 7px;
-    height: 7px;
-    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-
-  .card-carousel-root .swiper-pagination-bullet-active {
-    background: #9b7530 !important;
-    opacity: 1;
-    width: 26px;
-    border-radius: 9999px;
   }
 
   /* Luxury Managed Arrow Buttons */
@@ -261,7 +246,7 @@ export const CardCarousel: React.FC<CarouselProps> = ({
             </Swiper>
 
             {/* Custom Managed Navigation Arrows */}
-            {showNavigation && (
+            {/* {showNavigation && (
               <>
                 <button
                   type="button"
@@ -278,7 +263,7 @@ export const CardCarousel: React.FC<CarouselProps> = ({
                   <ChevronRight className="w-5 h-5 text-current transition-transform duration-200 group-hover:translate-x-0.5 stroke-[1.75]" />
                 </button>
               </>
-            )}
+            )} */}
           </div>
         </div>
       </div>

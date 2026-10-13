@@ -27,7 +27,7 @@ export function FounderSection({
     >
       {/* Column 1: Founder introduction and vision */}
       <div className="scroll-reveal max-[600px]:col-span-full animate__animated animate__fadeInLeft animate__slow">
-        <p className="text-[#705030] text-[9px] font-semibold tracking-[0.2em] leading-[1.6] uppercase">{eyebrow}</p>
+        <p className="text-[#a57c36] text-[9px] font-semibold tracking-[0.2em] leading-[1.6] uppercase">{eyebrow}</p>
         <h2 id="founder-heading" className="mt-[13px] font-serif text-[clamp(29px,3vw,42px)] max-[600px]:text-[37px] font-medium leading-[1.05] text-[#101010]">{heading}</h2>
         <p className="mt-[18px] text-[#605d59] text-[11px] leading-[1.9] max-[600px]:max-w-[530px]">{intro}</p>
       </div>

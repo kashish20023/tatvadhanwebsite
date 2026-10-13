@@ -13,7 +13,7 @@ export const contactDetails = {
   email: "contact@Tatvadhan.com",
   inquirySubject: "Private Couture Consultation",
   flagshipLocation: "Jaipur, Rajasthan, India",
-  storeCountText: "5 Stores\nworldwide",
+  storeCountText: "5 Stores\npan india",
   storeLinkText: "Find a Store",
   currency: "INR",
 };

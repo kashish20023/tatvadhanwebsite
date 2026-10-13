@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Alata&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Alata&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
 @import "tailwindcss";
 @import "tw-animate-css";
 
@@ -50,7 +50,7 @@
   --gold: #e8c35a;
   --antique-gold: #f0d060;
   --heritage: #301010;
-  --warm-brown: #705030;
+  --warm-brown: #a57c36;
   --terracotta: #b07050;
   --peach: #c09070;
   --beige: #c0a890;
@@ -76,7 +76,7 @@
   --color-ivory: #f0f0f0;
   --color-gold: #e8c35a;
   --color-heritage: #301010;
-  --color-warm-brown: #705030;
+  --color-warm-brown: #a57c36;
   --color-terracotta: #b07050;
   --color-peach: #c09070;
   --color-journal: #f5f3ef;

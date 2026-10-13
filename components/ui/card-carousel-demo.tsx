@@ -36,7 +36,7 @@ const CardCarouselDemo = () => {
       <CardCarousel
         images={images}
         autoplayDelay={2000}
-        showPagination={true}
+        showPagination={false}
         showNavigation={true}
       />
     </div>

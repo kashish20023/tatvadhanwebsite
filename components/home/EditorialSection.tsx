@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { OriginButton } from "@/components/ui/origin-button";
 
 interface EditorialSectionProps {
   eyebrow?: string;
@@ -12,19 +13,12 @@ interface EditorialSectionProps {
 export function EditorialSection({
   eyebrow = "The House Ethos",
   title = "LUXURY • LEGACY • INDIVIDUALITY",
-  description = "Luxury: Handcrafted garments with the finesse of haute couture. Legacy: Jaipur’s royal artistry elevated for modern sophistication. Individuality: A wardrobe not for everyone, but “for the one.”",
+  description = "Crafting bespoke, haute-couture garments that blend Jaipur’s rich royal artistry with modern sophistication for the truly discerning individual.",
   subDescription,
   ctaText = "Show More",
   ctaHref = "/collection",
 }: EditorialSectionProps) {
   // Parse structured pillars if description follows "Label: text. Label: text." format
-  const pillarMatches = Array.from(
-    description.matchAll(/([A-Za-z\s]+?):\s*([^:]+?)(?=(?:\s+[A-Za-z\s]+?:|$))/g)
-  );
-
-  const pillars = pillarMatches.length > 0
-    ? pillarMatches.map((m) => ({ label: m[1].trim(), text: m[2].trim() }))
-    : null;
 
   return (
     <section
@@ -35,7 +29,7 @@ export function EditorialSection({
       {/* 1. Top-Left: Text Block */}
       <div className="scroll-reveal animate__animated animate__fadeInLeft animate__slow col-start-1 row-start-1 max-[900px]:col-span-full max-[600px]:col-auto flex flex-col justify-center pr-[18px] max-[900px]:pb-[24px]">
         {eyebrow && (
-          <p className="text-[#705030] text-[9px] font-semibold tracking-[0.22em] leading-[1.6] uppercase mb-[10px]">
+          <p className="text-[#a57c36] text-[9px] font-semibold tracking-[0.22em] leading-[1.6] uppercase mb-[10px]">
             {eyebrow}
           </p>
         )}
@@ -60,36 +54,26 @@ export function EditorialSection({
           )}
         </h2>
 
-        {pillars ? (
-          <div className="space-y-[10px] mb-[26px] max-w-[340px]">
-            {pillars.map((pillar, idx) => (
-              <div key={idx} className="text-[11.5px] max-[600px]:text-[11px] leading-[1.75] text-[#555]">
-                <span className="font-semibold text-[#1a1713] tracking-[0.06em] uppercase text-[10px] mr-1.5 inline-block">
-                  {pillar.label} —
-                </span>
-                <span>{pillar.text}</span>
-              </div>
-            ))}
-          </div>
-        ) : (
+        <div className="space-y-[12px] mb-[26px] max-w-[340px]">
           <p className="max-w-[330px] text-[#555] text-[12px] leading-[1.8] mb-[22px]">{description}</p>
-        )}
-
-        {subDescription && !subDescription.toLowerCase().includes("lorem") && (
-          <p className="max-w-[330px] text-[11.5px] leading-[1.7] text-[#666] mb-[22px]">{subDescription}</p>
-        )}
+          {subDescription && !subDescription.toLowerCase().includes("lorem") && (
+            <p className="max-w-[330px] text-[11.5px] leading-[1.7] text-[#666] mb-[22px]">{subDescription}</p>
+          )}
+        </div>
 
         <div>
-          <Link
-            className="inline-flex items-center gap-[14px] px-[28px] py-[10px] border border-[#1a1713] text-[#1a1713] text-[9.5px] font-medium tracking-[0.18em] uppercase no-underline bg-transparent transition-all duration-300 hover:bg-[#1a1713] hover:text-[#FAF8F5] group"
-            href={ctaHref}
-          >
-            <span>{ctaText}</span>
-            <span className="text-[#a28349] group-hover:translate-x-1 transition-transform duration-300 text-[12px]" aria-hidden="true">
-              →
-            </span>
+          <Link href={ctaHref}>
+            <OriginButton
+              className="border-[#a57c36] text-[#a57c36] hover:text-white text-[9.5px] font-medium tracking-[0.18em] border rounded-lg uppercase h-auto py-[10px] px-[28px] bg-transparent group"
+            >
+              <span className="transition-colors duration-300 group-hover:text-white">{ctaText}</span>
+              <span className="text-[#a28349] group-hover:text-white group-hover:translate-x-1 transition-all duration-300 text-[12px]" aria-hidden="true">
+                →
+              </span>
+            </OriginButton>
           </Link>
         </div>
+
       </div>
 
       {/* 2. Top-Middle: Detail Collage (image_22) */}

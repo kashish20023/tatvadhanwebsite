@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { occasionLooks } from "@/data/occasions";
+import { OriginButton } from "@/components/ui/origin-button";
 
 interface CollectionSectionProps {
   topEyebrow?: string;
@@ -17,10 +18,10 @@ export function CollectionSection({
   topEyebrow = "TATVADHAN IS NOT FOR EVERYONE. IT IS FOR THE ONE.",
   topTitle = "A MODERN ROYAL’S WARDROBE",
   topSubtitle = "A brand that makes men feel larger-than-life, royal, and unforgettable.",
-  featureEyebrow = "Go-to luxury brand for modern grooms worldwide",
+  featureEyebrow = "Go-to luxury brand for modern grooms pan india",
   featureTitle = "Express identity, pride and presence",
-  featureDescription = "• Exclusivity -“No two Tatvadhan grooms are alike.” • Aspirational Luxury - Ethnic wear at par with global luxury standards. • Pride & Power - Wardrobes that embody strength, heritage, and elegance.",
-  featureSubDescription = "The Tatvadhan Experience",
+  featureDescription = "Handcrafted, haute-couture ethnic wear blending Jaipur’s royal legacy with modern exclusivity ensuring no two grooms are ever alike.",
+  featureSubDescription = "FOR THE DISCERNING MODERN GROOM",
   featureCtaText = "Show More",
   featureCtaHref = "/occasions",
 }: CollectionSectionProps) {
@@ -40,7 +41,7 @@ export function CollectionSection({
           <p className="text-[#62605d] text-[9.5px] font-semibold tracking-[0.22em] leading-[1.6] uppercase text-center w-full">
             {topEyebrow}
           </p>
-          <h2 id="discover-heading" className="mt-[10px] font-serif text-[clamp(31px,3.2vw,44px)] max-[600px]:text-[34px] font-medium tracking-[-0.015em] leading-[1.12] text-[#705030] uppercase text-center w-full">
+          <h2 id="discover-heading" className="mt-[10px] font-serif text-[clamp(31px,3.2vw,44px)] max-[600px]:text-[34px] font-medium tracking-[-0.015em] leading-[1.12] text-[#a57c36] uppercase text-center w-full">
             {topTitle}
           </h2>
           <p className="max-w-[680px] w-full mx-auto mt-[12px] text-[#62605d] text-[12.5px] leading-[1.85] text-center">
@@ -48,14 +49,15 @@ export function CollectionSection({
           </p>
         </div>
 
-        <div id="occasions" className="grid grid-cols-3 gap-[18px] max-[900px]:gap-[12px] max-[600px]:gap-[8px] w-full mt-[42px] max-[600px]:mt-[30px] mx-auto" aria-label="Occasion looks showcase">
+        {/* DESKTOP & TABLET: 3 Arched Mehrab Windows */}
+        <div id="occasions" className="hidden md:grid grid-cols-3 gap-[18px] max-[900px]:gap-[12px] w-full mt-[42px] mx-auto" aria-label="Occasion looks showcase">
           {occasionLooks.map((look, index) => (
             <div
               key={look.file}
               className="group relative filter drop-shadow-[0_8px_20px_rgba(30,20,10,0.06)] hover:drop-shadow-[0_16px_32px_rgba(30,20,10,0.12)] transition-all duration-700 ease-out"
             >
               <figure
-                className="arch-frame relative w-full h-[clamp(380px,32vw,440px)] max-[900px]:h-[310px] max-[600px]:h-[min(65vw,285px)] bg-[#e7dfd2] overflow-hidden"
+                className="arch-frame relative w-full h-[clamp(380px,32vw,440px)] max-[900px]:h-[310px] bg-[#e7dfd2] overflow-hidden"
               >
                 <img
                   src={look.file}
@@ -87,31 +89,55 @@ export function CollectionSection({
           ))}
         </div>
 
+        {/* MOBILE VIEW: 1 Full-Width Top Card + 2 Cards Bottom Grid */}
+        <div className="block md:hidden w-full mt-[28px]" aria-label="Occasion looks mobile showcase">
+          {/* Top Full-Width Card */}
+          <div className="w-full mb-4.5">
+            <figure className="relative w-full aspect-[16/11] overflow-hidden rounded-[14px] border border-[#C5AA75]/80 bg-[#e7dfd2] shadow-[0_4px_16px_rgba(30,20,10,0.06)]">
+              <img
+                src={occasionLooks[0]?.file}
+                alt={occasionLooks[0]?.alt || "Hand Embellishment"}
+                loading="lazy"
+                className="w-full h-full object-cover object-[center_30%]"
+              />
+            </figure>
+          </div>
+
+          {/* Bottom 2-Column Grid */}
+          <div className="grid grid-cols-2 gap-3.5">
+            {/* Bottom Left Card */}
+            <div>
+              <figure className="relative w-full aspect-[4/5] overflow-hidden rounded-[14px] border border-[#C5AA75]/80 bg-[#e7dfd2] shadow-[0_4px_16px_rgba(30,20,10,0.06)]">
+                <img
+                  src={occasionLooks[1]?.file}
+                  alt={occasionLooks[1]?.alt || "Artisan Finishing"}
+                  loading="lazy"
+                  className="w-full h-full object-cover object-[center_40%]"
+                />
+              </figure>
+            </div>
+
+            {/* Bottom Right Card */}
+            <div>
+              <figure className="relative w-full aspect-[4/5] overflow-hidden rounded-[14px] border border-[#C5AA75]/80 bg-[#e7dfd2] shadow-[0_4px_16px_rgba(30,20,10,0.06)]">
+                <img
+                  src={occasionLooks[2]?.file}
+                  alt={occasionLooks[2]?.alt || "Signature Embroidery"}
+                  loading="lazy"
+                  className="w-full h-full object-cover object-[center_44%]"
+                />
+              </figure>
+            </div>
+          </div>
+        </div>
+
         {/* Feature Split Section */}
         {(() => {
-          // Parse feature description bullets if formatted with "•"
-          const bullets = featureDescription.includes("•")
-            ? featureDescription
-              .split("•")
-              .map((b) => b.trim())
-              .filter(Boolean)
-              .map((item) => {
-                const dashIdx = item.indexOf("-");
-                if (dashIdx !== -1) {
-                  return {
-                    label: item.slice(0, dashIdx).trim(),
-                    text: item.slice(dashIdx + 1).trim(),
-                  };
-                }
-                return { label: "", text: item };
-              })
-            : null;
-
           return (
             <div className="grid grid-cols-[0.8fr_1fr] max-[600px]:grid-cols-1 items-center gap-[clamp(40px,8vw,110px)] max-[900px]:gap-[38px] max-[600px]:gap-[28px] w-full mt-[85px] max-[600px]:mt-[55px] mx-auto">
               <div className="scroll-reveal animate__animated animate__fadeInLeft animate__slow max-w-[420px] max-[600px]:max-w-[470px]">
                 {featureEyebrow && (
-                  <p className="text-[#705030] text-[9.5px] font-semibold tracking-[0.18em] leading-[1.5] uppercase mb-[10px]">
+                  <p className="text-[#a57c36] text-[9.5px] font-semibold tracking-[0.18em] leading-[1.5] uppercase mb-[10px]">
                     {featureEyebrow}
                   </p>
                 )}
@@ -119,43 +145,26 @@ export function CollectionSection({
                   {featureTitle}
                 </h3>
 
-                {bullets ? (
-                  <div className="space-y-[12px] mt-[20px] mb-[26px]">
-                    {bullets.map((b, idx) => (
-                      <div key={idx} className="text-[12px] max-[600px]:text-[11.5px] leading-[1.75] text-[#555]">
-                        {b.label && (
-                          <span className="font-semibold text-[#1a1713] tracking-[0.06em] uppercase text-[10.5px] mr-1.5 inline-block">
-                            {b.label} —
-                          </span>
-                        )}
-                        <span>{b.text}</span>
-                      </div>
-                    ))}
-                  </div>
-                ) : (
-                  <p className="max-w-[380px] mt-[16px] mb-[22px] text-[#555] text-[12px] leading-[1.85]">
-                    {featureDescription}
-                  </p>
-                )}
 
-                {featureSubDescription && !featureSubDescription.toLowerCase().includes("lorem") && (
+                <p className="max-w-[380px] mt-[16px] mb-[22px] py-4 text-[#555] text-[12px] leading-[1.85]">
+                  {featureDescription}
+                </p>
+
+                {/* {featureSubDescription && !featureSubDescription.toLowerCase().includes("lorem") && (
                   <p className="max-w-[380px] text-[#666] text-[11.5px] leading-[1.75] mb-[22px]">
                     {featureSubDescription}
                   </p>
-                )}
+                )} */}
 
                 <div>
-                  <Link
-                    className="inline-flex items-center gap-[16px] pb-[6px] border-b border-[#a28349] text-[#1a1713] text-[9.5px] font-medium tracking-[0.16em] uppercase transition-all duration-300 hover:text-[#9b7530] hover:border-[#101010] group"
-                    href={featureCtaHref}
-                  >
-                    <span>{featureCtaText}</span>
-                    <span
-                      className="text-[#a28349] group-hover:translate-x-1 group-hover:-translate-y-0.5 transition-transform duration-300 text-[13px]"
-                      aria-hidden="true"
-                    >
-                      ↗
-                    </span>
+                  <Link href={featureCtaHref}>
+                    <OriginButton
+                      className="border-[#a57c36] text-[#a57c36] hover:text-white text-[9.5px] font-medium tracking-[0.18em] border rounded-lg uppercase h-auto py-[10px] px-[28px] bg-transparent group">
+                      <span className="transition-colors duration-300 group-hover:text-white">{featureCtaText}</span>
+                      <span className="text-[#a28349] group-hover:text-white group-hover:translate-x-1 transition-all duration-300 text-[12px]" aria-hidden="true">
+                        →
+                      </span>
+                    </OriginButton>
                   </Link>
                 </div>
               </div>
@@ -173,6 +182,6 @@ export function CollectionSection({
           );
         })()}
       </div>
-    </section>
+    </section >
   );
 }

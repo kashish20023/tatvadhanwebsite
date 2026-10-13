@@ -8,13 +8,13 @@ export const occasionLooks: OccasionLook[] = [
     caption: "Intricate tonal threadwork crafted for festive movement",
   },
   {
-    file: "/images/NewPerson6.jpg",
+    file: "/images/NewPerson3.jpg",
     alt: "A relaxed couture portrait in blush",
     title: "Mehendi & High Tea",
     caption: "Airy silhouettes adorned with delicate gota patti",
   },
   {
-    file: "/images/NewPerson3.jpg",
+    file: "/images/NewPerson6.jpg",
     alt: "A seated portrait in Indian couture",
     title: "The Royal Pheras",
     caption: "Heirloom zardozi raw silk for the sacred hour",
