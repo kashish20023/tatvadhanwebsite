@@ -95,7 +95,6 @@ export function Footer({
         ))}
       </div>
 
-      {/* Footer Bottom Bar */}
       {/* <div className="grid grid-cols-[1fr_auto_1fr] items-center max-w-[1240px] mt-[65px] max-[600px]:mt-[48px] mx-auto pt-[17px] border-t border-[#38342e] text-[#bcb5a9] text-[9px] max-[600px]:text-[8px]">
         <p>{copyrightText}</p>
 
