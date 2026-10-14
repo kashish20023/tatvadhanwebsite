@@ -31,38 +31,10 @@ export function PageHeader({
       )}
     >
       <div className="max-w-2xl mx-auto flex flex-col items-center">
-        {/* 1. Breadcrumb Eyebrow */}
-        <nav
-          aria-label="Breadcrumb"
-          className="flex items-center justify-center gap-2.5 text-[9px] uppercase tracking-[0.28em] text-[#93753E] mb-4 font-medium font-sans"
-        >
-          <Link
-            href={breadcrumbParentHref}
-            className="hover:text-[#12100E] transition-colors"
-          >
-            {breadcrumbParent}
-          </Link>
-          <span className="text-[#D6B772]/60 font-light" aria-hidden="true">
-            /
-          </span>
-          <span className="text-[#787268]">{breadcrumbCurrent}</span>
-        </nav>
-
         {/* 2. Main Title in Regal Serif */}
         <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl text-[#12100E] font-normal tracking-tight leading-[1.14] mb-3">
           {title}
         </h1>
-
-        {/* 3. Balanced Subtitle with Gold Hairline Flanks */}
-        {eyebrow && (
-          <div className="flex items-center justify-center gap-3 my-2.5">
-            <span className="w-7 h-[1px] bg-[#D6B772]/45" aria-hidden="true" />
-            <p className="text-[9.5px] uppercase tracking-[0.22em] text-[#93753E] font-medium font-sans">
-              {eyebrow}
-            </p>
-            <span className="w-7 h-[1px] bg-[#D6B772]/45" aria-hidden="true" />
-          </div>
-        )}
 
         {/* 4. Editorial Narrative Description */}
         {description && (

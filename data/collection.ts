@@ -37,7 +37,7 @@ export const collectionPairs: LookPair[] = [
       tag: "ATMOSPHERE",
       title: "The Courtyard Celebration",
       caption: "Festive evening candlelight",
-      image: "/images/story_celebration.png",
+      image: "/images/story_celebration.webp",
       alt: "Groom in embroidered cream sherwani celebrating with friends in Jaipur courtyard",
       focalPosition: "center 35%",
     },
@@ -150,7 +150,7 @@ export const collectionStripItems: CollectionStripItem[] = [
   },
   {
     id: "strip-5",
-    image: "/images/story_celebration.png",
+    image: "/images/story_celebration.webp",
     alt: "Groom in embroidered cream sherwani celebrating with friends in Jaipur courtyard",
     tag: "ATMOSPHERE",
     title: "The Courtyard Celebration",

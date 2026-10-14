@@ -74,7 +74,7 @@ export const mediaGalleryItems: MediaItem[] = [
   },
   {
     id: "media-5",
-    src: "/images/story_celebration.png",
+    src: "/images/story_celebration.webp",
     alt: "Courtyard evening celebration with groom and friends",
     title: "Courtyard Celebration",
     category: "campaigns",
@@ -288,7 +288,7 @@ export const mediaGalleryItems: MediaItem[] = [
   },
   {
     id: "media-22",
-    src: "/images/story_celebration.png",
+    src: "/images/story_celebration.webp",
     alt: "Festive celebration gathering in traditional Indian couture",
     title: "Celebration Gala",
     category: "campaigns",

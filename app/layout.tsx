@@ -30,9 +30,9 @@ export const metadata: Metadata = {
   authors: [{ name: "Vinayak Agarwal" }],
   creator: "Tatvadhan Jaipur",
   icons: {
-    icon: "/images/image_01.png",
-    shortcut: "/images/image_01.png",
-    apple: "/images/image_01.png",
+    icon: "/images/image_01.webp",
+    shortcut: "/images/image_01.webp",
+    apple: "/images/image_01.webp",
   },
   openGraph: {
     title: "Tatvadhan Jaipur | The Wedding Chapter",

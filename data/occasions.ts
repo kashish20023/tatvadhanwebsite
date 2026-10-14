@@ -2,19 +2,19 @@ import type { FAQItem, JournalStory, OccasionLook, StorySlide } from "@/types/oc
 
 export const occasionLooks: OccasionLook[] = [
   {
-    file: "/images/NewPerson7.jpg",
+    file: "/images/NewPerson7.webp",
     alt: "A model in a blush embroidered sherwani",
     title: "The Sangeet Evening",
     caption: "Intricate tonal threadwork crafted for festive movement",
   },
   {
-    file: "/images/NewPerson3.jpg",
+    file: "/images/NewPerson3.webp",
     alt: "A relaxed couture portrait in blush",
     title: "Mehendi & High Tea",
     caption: "Airy silhouettes adorned with delicate gota patti",
   },
   {
-    file: "/images/NewPerson6.jpg",
+    file: "/images/NewPerson6.webp",
     alt: "A seated portrait in Indian couture",
     title: "The Royal Pheras",
     caption: "Heirloom zardozi raw silk for the sacred hour",
@@ -24,7 +24,7 @@ export const occasionLooks: OccasionLook[] = [
 export const journalStories: JournalStory[] = [
   {
     title: "Araico Collection launch",
-    file: "/images/newcollection.jpg",
+    file: "/images/newcollection.webp",
     alt: "A line of embroidered couture garments",
     date: "Tatvadhan Journal · Jaipur",
     description: "An homage to regal court dress featuring micro-zardozi wire and heritage velvet accents.",
@@ -40,7 +40,7 @@ export const journalStories: JournalStory[] = [
   },
   {
     title: "Artisanal Karigar Study 2026",
-    file: "/images/standi1.jpg",
+    file: "/images/standi1.webp",
     alt: "A couture look framed by Jaipur architecture",
     date: "Tatvadhan Journal · Jaipur",
     description: "Documenting generational handloom techniques preserved across master artisan families in Rajasthan.",
@@ -63,7 +63,7 @@ export const storySlides: StorySlide[] = [
       "Tatvadhan began with a simple idea — to bring the beauty of Indian fashion into everyday life. Inspired by our roots and shaped by modern tastes, we create thoughtfully designed outfits that feel effortless, elegant, and personal. For us, every piece is more than clothing. It’s made for the moments you remember.",
     signoff: "Tatvadhan — Rooted in tradition. Made for today.",
     backdropImage: "/images/image_31.webp",
-    sideImage: "/images/story_celebration.png",
+    sideImage: "/images/story_celebration.webp",
     sideAlt: "Celebration and festive luxury sherwanis in Jaipur",
   },
   {
@@ -72,7 +72,7 @@ export const storySlides: StorySlide[] = [
       "Within our sunlit Jaipur workrooms, master karigars spend hundreds of meticulous hours threading metallic zardozi and real silk threads. Each silhouette is constructed with architectonic precision yet designed to feel light as air.",
     signoff: "Tatvadhan — Rooted in tradition. Made for today.",
     backdropImage: "/images/image_31.webp",
-    sideImage: "/images/image_20.webp",
+    sideImage: "/images/NewPersonGroup.webp",
     sideAlt: "Couture craftsmanship and intricate bridal embroidery",
   },
   {
@@ -81,7 +81,7 @@ export const storySlides: StorySlide[] = [
       "True luxury does not shout; it endures. Every garment from Tatvadhan is conceived as a future heirloom to be cherished across generations, balancing royal heritage with the ease of the modern gentleman.",
     signoff: "Tatvadhan — Rooted in tradition. Made for today.",
     backdropImage: "/images/image_31.webp",
-    sideImage: "/images/image_03.webp",
+    sideImage: "/images/NewPerson1.webp",
     sideAlt: "A quiet moment in the Tatvadhan wedding collection",
   },
 ];

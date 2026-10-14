@@ -160,7 +160,7 @@ The **Tatvadhan Jaipur — The Wedding Chapter** web application is a high-fashi
      - Height: `72px` (Desktop) / `62px` (Mobile)
      - Surface: `#000000`
      - Grid layout: `1fr auto 1fr; align-items: center; padding: 0 5vw;`
-     - Logo mark: Centered `image_01.png` (`width: 134px`, mobile `112px`).
+     - Logo mark: Centered `image_01.webp` (`width: 134px`, mobile `112px`).
      - Mobile toggle: Hamburger button (`.menu-toggle`) hidden on desktop, active on $\le 600\text{px}$.
   2. **White Navigation Bar (`.main-nav`):**
      - Height: Min `50px`, surface `#ffffff`, border-bottom `1px solid #ece9e3`.
@@ -293,7 +293,7 @@ The **Tatvadhan Jaipur — The Wedding Chapter** web application is a high-fashi
   - **Legal:** Privacy & Cookies, Fees And Payment, Term And Condition.
 - **Bottom Bar (`.footer-bottom`):**
   - Left: Copyright `© 2026 Tatvadhan`.
-  - Center: Centered brand mark `/images/image_01.png` (`width: 77px`, opacity 0.8) linking to `#top`.
+  - Center: Centered brand mark `/images/image_01.webp` (`width: 77px`, opacity 0.8) linking to `#top`.
   - Right: Currency selector `🇮🇳   INR`.
 
 ---
@@ -312,7 +312,7 @@ The **Tatvadhan Jaipur — The Wedding Chapter** web application is a high-fashi
 
 | Asset Filename | Format | File Size | Natural Dimensions | Focal Alignment (`object-position`) | Component & Section Usages |
 |---|---|---|---|---|---|
-| **`image_01.png`** | PNG (Alpha) | 44.8 KB | 400 × 120 | Center | Masthead Brand Mark & Footer Brand Mark |
+| **`image_01.webp`** | WebP (Lossless) | 39.4 KB | 410 × 154 | Center | Masthead Brand Mark & Footer Brand Mark |
 | **`image_02.webp`** | WebP | 254.8 KB | 1200 × 1600 | `center 50%` / `center 45%` | Editorial Mosaic 4, Feature Split, Journal Card 3, FAQ Arched Frame |
 | **`image_03.webp`** | WebP | 139.5 KB | 900 × 1200 | `center 40%` | Occasions Look 3, Story Companion Look, Gallery Track |
 | **`image_04.webp`** | WebP | 198.0 KB | 1200 × 800 | `center 49%` | Journal Card 1, Full-Width Campaign Banner Card |

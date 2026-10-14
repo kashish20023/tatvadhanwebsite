@@ -13,11 +13,11 @@ import { CardCarousel } from "@/components/ui/card-carousel";
 const homeCarouselImages = [
   { src: "/images/image_21.webp", alt: "The Royal Jaipur Sherwani" },
   { src: "/images/image_02.webp", alt: "Palace Pavilion Study" },
-  { src: "/images/NewPerson1.jpg", alt: "Reclined Festive Silhouette" },
-  { src: "/images/story_celebration.png", alt: "The Courtyard Celebration" },
-  { src: "/images/NewPerson6.jpg", alt: "The Mannequin Triptych" },
+  { src: "/images/NewPerson1.webp", alt: "Reclined Festive Silhouette" },
+  { src: "/images/story_celebration.webp", alt: "The Courtyard Celebration" },
+  { src: "/images/NewPerson6.webp", alt: "The Mannequin Triptych" },
   { src: "/images/image_03.webp", alt: "The Quiet Salon Study" },
-  { src: "/images/NewPerson3.jpg", alt: "The Wedding Chapter Campaign" },
+  { src: "/images/NewPerson3.webp", alt: "The Wedding Chapter Campaign" },
 ];
 
 export default function HomePage() {

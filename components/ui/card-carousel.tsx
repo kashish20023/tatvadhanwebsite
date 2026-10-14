@@ -180,11 +180,11 @@ export const CardCarousel: React.FC<CarouselProps> = ({
 
 
         <div className="flex flex-col justify-center pb-2 pl-2 pt-0 sm:pt-0 md:items-center w-full text-center">
-          <h3 className="mt-[14px] font-serif text-[clamp(34px,4vw,51px)] max-[600px]:text-[39px] font-bold leading-[1.04] text-[#000000]">
+          <h3 className="mt-[14px] font-serif text-[clamp(34px,4vw,51px)] max-[600px]:text-[39px] font-semibold leading-[1.04] text-[#a57c36]">
             {title}
           </h3>
           {subtitle && (
-            <p className="text-xs sm:text-sm text-neutral-500 mt-1 max-w-lg">
+            <p className="text-xs sm:text-[16px] text-neutral-500 mt-1 max-w-lg md:max-w-xl">
               {subtitle}
             </p>
           )}

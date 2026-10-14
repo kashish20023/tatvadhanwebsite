@@ -1,7 +1,6 @@
 "use client";
 
-import { useState, useCallback, useEffect, useRef } from "react";
-import Image from "next/image";
+import { useState, useEffect } from "react";
 import { storySlides } from "@/data/occasions";
 import type { StorySlide } from "@/types/occasion";
 import { cn } from "@/lib/utils";
@@ -12,84 +11,49 @@ interface OurStoryProps {
 
 export function OurStory({ stories = storySlides }: OurStoryProps) {
   const [activeStoryIndex, setActiveStoryIndex] = useState(0);
-  const [isAnimating, setIsAnimating] = useState(false);
-  const touchStartX = useRef<number | null>(null);
 
-  const currentStory = stories[activeStoryIndex] || stories[0];
+  // Exactly 3 stories
+  const displayStories = stories.slice(0, 3);
 
-  const changeSlide = useCallback(
-    (newIndex: number) => {
-      if (isAnimating) return;
-      setIsAnimating(true);
-      setActiveStoryIndex(newIndex);
-      setTimeout(() => {
-        setIsAnimating(false);
-      }, 400);
-    },
-    [isAnimating]
-  );
-
-  const handleNext = useCallback(() => {
-    const nextIdx = (activeStoryIndex + 1) % stories.length;
-    changeSlide(nextIdx);
-  }, [activeStoryIndex, stories.length, changeSlide]);
-
-  const handlePrev = useCallback(() => {
-    const prevIdx = (activeStoryIndex - 1 + stories.length) % stories.length;
-    changeSlide(prevIdx);
-  }, [activeStoryIndex, stories.length, changeSlide]);
-
-  // Touch swipe support for mobile
-  const handleTouchStart = (e: React.TouchEvent) => {
-    touchStartX.current = e.touches[0].clientX;
-  };
-
-  const handleTouchEnd = (e: React.TouchEvent) => {
-    if (touchStartX.current === null) return;
-    const touchEndX = e.changedTouches[0].clientX;
-    const diffX = touchStartX.current - touchEndX;
-
-    if (Math.abs(diffX) > 45) {
-      if (diffX > 0) {
-        handleNext();
-      } else {
-        handlePrev();
-      }
-    }
-    touchStartX.current = null;
-  };
-
-  // Keyboard navigation when focused
+  // Preload all 3 images in browser cache immediately so no image is ever blank
   useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === "ArrowLeft") handlePrev();
-      if (e.key === "ArrowRight") handleNext();
-    };
-    window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [handleNext, handlePrev]);
+    if (typeof window === "undefined") return;
+    displayStories.forEach((story) => {
+      const img = new window.Image();
+      img.src = story.sideImage;
+    });
+  }, [displayStories]);
+
+  // Automatically cycle through the 3 stories every 4.5 seconds
+  useEffect(() => {
+    if (displayStories.length <= 1) return;
+
+    const interval = setInterval(() => {
+      setActiveStoryIndex((prev) => (prev + 1) % displayStories.length);
+    }, 4500);
+
+    return () => clearInterval(interval);
+  }, [displayStories.length]);
 
   return (
     <section
       id="our-story"
       className="relative w-full py-16 sm:py-20 md:py-24 bg-transparent overflow-hidden"
       aria-labelledby="story-heading"
-      onTouchStart={handleTouchStart}
-      onTouchEnd={handleTouchEnd}
     >
       <div className="max-w-[1380px] mx-auto px-4 sm:px-6 md:px-8">
         {/* Section Eyebrow Header */}
         <div className="text-center mb-10 md:mb-12">
           <div className="inline-flex items-center justify-center gap-3 mb-2.5">
-            <span className="w-8 h-[1px] bg-[#D6B772]/60" aria-hidden="true" />
-            <p className="text-[9.5px] uppercase tracking-[0.28em] text-[#93753E] font-medium font-sans">
+            <span className="w-8 h-[1px] bg-[#101010]/60" aria-hidden="true" />
+            <p className="text-[#101010] text-[13px] font-semibold tracking-[0.18em] leading-[1.5] uppercase mb-[10px]">
               Jaipur Atelier Chronicles
             </p>
-            <span className="w-8 h-[1px] bg-[#D6B772]/60" aria-hidden="true" />
+            <span className="w-8 h-[1px] bg-[#101010]/60" aria-hidden="true" />
           </div>
           <h2
             id="story-heading"
-            className="font-serif text-3xl sm:text-4xl md:text-5xl text-[#12100E] font-normal tracking-tight"
+            className="font-serif text-3xl sm:text-4xl md:text-5xl text-[#a57c36] font-semibold tracking-tight"
           >
             The Heritage & Founder
           </h2>
@@ -100,20 +64,12 @@ export function OurStory({ stories = storySlides }: OurStoryProps) {
           {/* Left: Immersive Royal Archway Card */}
           <div className="lg:col-span-7 scroll-reveal animate__animated animate__fadeInLeft animate__slow relative flex flex-col justify-end min-h-[460px] sm:min-h-[520px] lg:min-h-[580px] rounded-2xl sm:rounded-3xl overflow-hidden border border-[#ECE7DE] shadow-[0_8px_30px_rgb(0,0,0,0.06)] bg-[#251911]">
             {/* Background Image */}
-            <div
-              key={`bg-${activeStoryIndex}`}
-              className={cn(
-                "absolute inset-0 w-full h-full transition-opacity duration-700 ease-out",
-                isAnimating ? "opacity-70 scale-[1.02]" : "opacity-100 scale-100"
-              )}
-            >
-              <Image
-                src={currentStory.backdropImage}
+            <div className="absolute inset-0 w-full h-full">
+              <img
+                src="/images/image_31.webp"
                 alt=""
-                fill
-                priority
-                sizes="(max-width: 1024px) 100vw, 60vw"
-                className="object-cover object-center"
+                loading="eager"
+                className="w-full h-full object-cover object-center"
               />
             </div>
 
@@ -124,36 +80,32 @@ export function OurStory({ stories = storySlides }: OurStoryProps) {
             />
 
             {/* Narrative Content with Smooth Transition */}
-            <div
-              key={`copy-${activeStoryIndex}`}
-              className="relative z-10 p-6 sm:p-10 md:p-12 text-center sm:text-left flex flex-col justify-end h-full animate-media-fade"
-            >
-              {/* Slide Counter / Eyebrow */}
-              {/* <div className="flex items-center justify-center sm:justify-start gap-2.5 mb-3.5">
-                <span className="px-2.5 py-0.5 text-[8.5px] uppercase tracking-[0.25em] font-medium bg-[#FAF8F5]/15 backdrop-blur-md text-[#D6B772] border border-[#D6B772]/30 rounded-full">
-                  Chapter {String(activeStoryIndex + 1).padStart(2, "0")} /{" "}
-                  {String(stories.length).padStart(2, "0")}
-                </span>
-                <span className="text-[#D6B772]/70 text-xs">·</span>
-                <span className="text-[9px] uppercase tracking-[0.2em] text-white/70">
-                  Jaipur Atelier
-                </span>
-              </div> */}
+            <div className="relative z-10 p-6 sm:p-10 md:p-12 text-center sm:text-left flex flex-col justify-end min-h-[220px]">
+              {displayStories.map((story, idx) => {
+                const isActive = idx === activeStoryIndex;
+                return (
+                  <div
+                    key={idx}
+                    className={cn(
+                      "transition-all duration-500 ease-out",
+                      isActive
+                        ? "opacity-100 translate-y-0 relative z-10 pointer-events-auto"
+                        : "opacity-0 translate-y-1 absolute inset-x-6 sm:inset-x-10 md:inset-x-12 bottom-6 sm:bottom-10 md:bottom-12 pointer-events-none"
+                    )}
+                    aria-hidden={!isActive}
+                  >
+                    {/* Title in Regal Couture Serif */}
+                    <h3 className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-[42px] text-white font-normal leading-[1.16] mb-4 text-shadow-sm">
+                      {story.title}
+                    </h3>
 
-              {/* Title in Regal Couture Serif */}
-              <h3 className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-[42px] text-white font-normal leading-[1.16] mb-4 text-shadow-sm">
-                {currentStory.title}
-              </h3>
-
-              {/* Narrative Story Body */}
-              <p className="text-xs sm:text-sm md:text-[14px] leading-[1.85] text-white/90 font-light font-sans max-w-xl mx-auto sm:mx-0">
-                {currentStory.narrative}
-              </p>
-
-              {/* Founder Signoff */}
-              {/* <p className="font-serif italic text-xs sm:text-sm md:text-[15px] text-[#D6B772] mt-4 pt-3 border-t border-white/15">
-                {currentStory.signoff}
-              </p> */}
+                    {/* Narrative Story Body */}
+                    <p className="text-xs sm:text-sm md:text-[14px] leading-[1.85] text-white/90 font-light font-sans max-w-xl mx-auto sm:mx-0">
+                      {story.narrative}
+                    </p>
+                  </div>
+                );
+              })}
             </div>
           </div>
 
@@ -161,24 +113,32 @@ export function OurStory({ stories = storySlides }: OurStoryProps) {
           <div className="lg:col-span-5 flex flex-col h-full">
             {/* Visual Look Card */}
             <div className="relative w-full h-full min-h-[360px] sm:min-h-[440px] lg:min-h-[580px] scroll-reveal animate__animated animate__fadeInRight animate__slow rounded-2xl sm:rounded-3xl overflow-hidden border border-[#ECE7DE] shadow-[0_8px_30px_rgb(0,0,0,0.06)] bg-[#EAE4DC] group">
-              <div
-                key={`side-${activeStoryIndex}`}
-                className={cn(
-                  "relative w-full h-full transition-all duration-700 ease-out",
-                  isAnimating ? "opacity-60 scale-[1.02]" : "opacity-100 scale-100"
-                )}
-              >
-                <Image
-                  src={currentStory.sideImage}
-                  alt={currentStory.sideAlt || currentStory.title}
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 40vw"
-                  className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.035]"
-                />
+              {displayStories.map((story, idx) => {
+                const isActive = idx === activeStoryIndex;
+                return (
+                  <div
+                    key={idx}
+                    className={cn(
+                      "absolute inset-0 w-full h-full transition-opacity duration-700 ease-in-out",
+                      isActive
+                        ? "opacity-100 z-10 pointer-events-auto"
+                        : "opacity-0 z-0 pointer-events-none"
+                    )}
+                    aria-hidden={!isActive}
+                  >
+                    <img
+                      src={story.sideImage}
+                      alt={story.sideAlt || story.title}
+                      loading="eager"
+                      decoding="sync"
+                      className="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.035]"
+                    />
 
-                {/* Subtle Luxury Gradient Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
-              </div>
+                    {/* Subtle Luxury Gradient Overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>

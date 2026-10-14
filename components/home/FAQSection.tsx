@@ -22,7 +22,7 @@ export function FAQSection({
   subtitle = "We’ve Got Answers",
   intro = "Everything you need to know before getting started.",
   faqs = faqItems,
-  imageSrc = "/images/NewPerson9.jpg",
+  imageSrc = "/images/NewPerson9.webp",
   imageAlt = "Luxury Indian bridal jewellery and couture details",
 }: FAQSectionProps) {
   // FAQs closed by default; opens when clicked
@@ -51,15 +51,15 @@ export function FAQSection({
               id="faq-heading"
               className="font-serif leading-[1.06] tracking-[-0.025em]"
             >
-              <span className="block text-[clamp(36px,3.8vw,52px)] font-normal text-[#1a1714]">
+              <span className="block text-[clamp(36px,3.8vw,52px)] font-serif font-normal text-[#1a1714]">
                 {title}
               </span>
-              <span className="mt-1 block text-[clamp(38px,4.1vw,56px)] font-normal text-[#a57c36]">
+              <span className="mt-1 block font-serif text-[clamp(38px,4.1vw,56px)] font-normal text-[#a57c36]">
                 {subtitle}
               </span>
             </h2>
 
-            <p className="max-w-[430px] text-[12px] sm:text-[12.5px] leading-[1.7] text-[#756f66] mt-3">
+            <p className="max-w-[430px] text-[12px] sm:text-[16px] leading-[1.7] text-[#101010] mt-3">
               {intro}
             </p>
           </div>

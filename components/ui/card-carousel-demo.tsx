@@ -22,7 +22,7 @@ const CardCarouselDemo = () => {
       alt: "Reclined Festive Silhouette",
     },
     {
-      src: "/images/story_celebration.png",
+      src: "/images/story_celebration.webp",
       alt: "The Courtyard Celebration",
     },
     {

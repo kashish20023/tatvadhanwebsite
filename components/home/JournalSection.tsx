@@ -16,7 +16,7 @@ const defaultJournalItems: JournalCardItem[] = [
     category: "COLLECTION LAUNCH",
     title: "Aarico Collection",
     description: "An homage to regal court dress featuring micro-zardozi wire and heritage velvet accents.",
-    file: "/images/newcollection.jpg",
+    file: "/images/newcollection.webp",
     alt: "Aarico Collection Launch",
     href: "/collection",
   },
@@ -32,7 +32,7 @@ const defaultJournalItems: JournalCardItem[] = [
     category: "STUDY 2026",
     title: "Artisanal Karigar Study",
     description: "Documenting generational handloom techniques preserved across master artisan families in Rajasthan.",
-    file: "/images/standi1.jpg",
+    file: "/images/standi1.webp",
     alt: "Artisanal Karigar Study 2026",
     href: "/our-story",
   },
@@ -40,7 +40,7 @@ const defaultJournalItems: JournalCardItem[] = [
     category: "FESTIVE COLLECTION",
     title: "Autumn / Winter Peek",
     description: "Warm blush, champagne gold, and muted ivory palettes designed for timeless winter unions.",
-    file: "/images/NewPerson1.jpg",
+    file: "/images/NewPerson1.webp",
     alt: "Autumn / Winter Sneak Peek",
     href: "/our-story",
   },
@@ -75,7 +75,7 @@ export function JournalSection({
           sm:bg-[length:100%_100%]
           lg:bg-cover lg:bg-center"
         style={{
-          backgroundImage: `url('/images/news-collections-bg.png')`,
+          backgroundImage: `url('/images/news-collections-bg.webp')`,
         }}
         aria-hidden="true"
       />
@@ -88,7 +88,7 @@ export function JournalSection({
             {/* Heading */}
             <h2
               id="journal-heading"
-              className="font-serif text-[36px] sm:text-[46px] md:text-[54px] font-bold text-[#2A2118] tracking-[-0.02em] leading-[1.08] mb-3"
+              className="font-serif text-[34px] sm:text-[46px] font-bold text-[#2A2118] tracking-[-0.02em] leading-[1.08] mb-3"
             >
               {heading}
             </h2>
@@ -98,12 +98,8 @@ export function JournalSection({
           <div className="self-start md:self-end">
             <Link href={ctaHref}>
               <OriginButton
-                className="border-[#a57c36] text-[#a57c36] hover:text-white text-[9.5px] font-medium tracking-[0.18em] border rounded-lg uppercase h-auto py-[10px] px-[28px] bg-transparent group"
-              >
-                <span className="transition-colors duration-300 group-hover:text-white">{ctaText}</span>
-                <span className="text-[#a28349] group-hover:text-white group-hover:translate-x-1 transition-all duration-300 text-[12px]" aria-hidden="true">
-                  →
-                </span>
+                className="border-[#a57c36] !text-white hover:!text-[#a57c36] text-[9.5px] font-medium tracking-[0.18em] border rounded-none uppercase h-auto py-[10px] px-[20px] bg-[#a57c36] hover:bg-transparent group">
+                <span className="text-[13px] !text-white transition-colors duration-300 group-hover:!text-[#a57c36]">{ctaText}</span>
               </OriginButton>
             </Link>
           </div>

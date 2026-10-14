@@ -43,7 +43,7 @@ export function Header({
           <span aria-hidden="true" />
           <Link className="justify-self-center w-[134px] max-[600px]:w-[112px]" href="/" aria-label="Tatvadhan Jaipur home">
             <Image
-              src="/images/image_01.png"
+              src="/images/image_01.webp"
               alt="Tatvadhan Jaipur"
               width={140}
               height={36}

@@ -7,7 +7,7 @@ export const demoFrames: Frame[] = [
   // Row 0
   {
     id: 1, // Cross: Top-Left (Video - previously from 2nd row mid)
-    image: "/images/Animate5.jpg",
+    image: "/images/Animate5.webp",
     video: "/video/AnimateV3.MP4",
     defaultPos: { x: 0, y: 0, w: 4, h: 4 },
     mediaSize: 1,
@@ -15,14 +15,14 @@ export const demoFrames: Frame[] = [
   },
   {
     id: 2, // Diamond: Top-Center (Image)
-    image: "/images/Animate2.jpg",
+    image: "/images/Animate2.webp",
     defaultPos: { x: 4, y: 0, w: 4, h: 4 },
     mediaSize: 1,
     isHovered: false,
   },
   {
     id: 3, // Cross: Top-Right (Video)
-    image: "/images/Animate3.jpg",
+    image: "/images/Animate3.webp",
     video: "/video/AnimateV2.MP4",
     defaultPos: { x: 8, y: 0, w: 4, h: 4 },
     mediaSize: 1,
@@ -32,14 +32,14 @@ export const demoFrames: Frame[] = [
   // Row 1
   {
     id: 4, // Diamond: Middle-Left (Image)
-    image: "/images/Animate4.jpg",
+    image: "/images/Animate4.webp",
     defaultPos: { x: 0, y: 4, w: 4, h: 4 },
     mediaSize: 1,
     isHovered: false,
   },
   {
     id: 5, // Cross: Center (Video - 1st video moved to center)
-    image: "/images/Animate1.jpg",
+    image: "/images/Animate1.webp",
     video: "/video/AnimateV1.MP4",
     defaultPos: { x: 4, y: 4, w: 4, h: 4 },
     mediaSize: 1,
@@ -47,7 +47,7 @@ export const demoFrames: Frame[] = [
   },
   {
     id: 6, // Diamond: Middle-Right (Image)
-    image: "/images/Animate6.jpg",
+    image: "/images/Animate6.webp",
     defaultPos: { x: 8, y: 4, w: 4, h: 4 },
     mediaSize: 1,
     isHovered: false,
@@ -56,7 +56,7 @@ export const demoFrames: Frame[] = [
   // Row 2
   {
     id: 7, // Cross: Bottom-Left (Video)
-    image: "/images/Animate7.jpg",
+    image: "/images/Animate7.webp",
     video: "/video/AnimateV4.MP4",
     defaultPos: { x: 0, y: 8, w: 4, h: 4 },
     mediaSize: 1,
@@ -64,14 +64,14 @@ export const demoFrames: Frame[] = [
   },
   {
     id: 8, // Diamond: Bottom-Center (Image)
-    image: "/images/Animate8.jpg",
+    image: "/images/Animate8.webp",
     defaultPos: { x: 4, y: 8, w: 4, h: 4 },
     mediaSize: 1,
     isHovered: false,
   },
   {
     id: 9, // Cross: Bottom-Right (Video)
-    image: "/images/Animate2.jpg",
+    image: "/images/Animate2.webp",
     video: "/video/AnimateV5.MP4",
     defaultPos: { x: 8, y: 8, w: 4, h: 4 },
     mediaSize: 1,

@@ -188,8 +188,9 @@ const OriginButton = React.forwardRef<HTMLButtonElement, OriginButtonProps>(
         className={cn(
           componentThemeClassName,
           "relative inline-flex h-12 cursor-pointer touch-manipulation select-none items-center justify-center overflow-hidden rounded-xl px-8 font-medium text-[15px] tracking-[-0.02em]",
-          "border-[4px] border-border bg-card text-card-foreground",
-          "dark:bg-muted dark:text-foreground",
+          "border-[4px] border-border",
+          !className?.includes("bg-") && "bg-card dark:bg-muted",
+          !className?.includes("text-") && "text-card-foreground dark:text-foreground",
           "transition-[color] duration-300 ease-[cubic-bezier(0.16,1,0.3,1)]",
           "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background",
           "disabled:pointer-events-none disabled:opacity-50",
@@ -281,7 +282,7 @@ const OriginButton = React.forwardRef<HTMLButtonElement, OriginButtonProps>(
         <motion.span
           animate={{ scale: showFill && coverSize > 0 ? 1 : 0 }}
           aria-hidden
-          className="pointer-events-none absolute -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#a57c36] dark:bg-[#a57c36]"
+          className="pointer-events-none absolute -translate-x-1/2 -translate-y-1/2 rounded-full bg-transparent"
           initial={false}
           style={{
             height: coverSize,

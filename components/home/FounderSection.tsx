@@ -27,9 +27,9 @@ export function FounderSection({
     >
       {/* Column 1: Founder introduction and vision */}
       <div className="scroll-reveal max-[600px]:col-span-full animate__animated animate__fadeInLeft animate__slow">
-        <p className="text-[#a57c36] text-[9px] font-semibold tracking-[0.2em] leading-[1.6] uppercase">{eyebrow}</p>
-        <h2 id="founder-heading" className="mt-[13px] font-serif text-[clamp(29px,3vw,42px)] max-[600px]:text-[37px] font-medium leading-[1.05] text-[#101010]">{heading}</h2>
-        <p className="mt-[18px] text-[#605d59] text-[11px] leading-[1.9] max-[600px]:max-w-[530px]">{intro}</p>
+        <p className="text-[#101010] text-[13px] font-semibold tracking-[0.2em] leading-[1.6] uppercase">{eyebrow}</p>
+        <h2 id="founder-heading" className="mt-[13px] font-serif text-[clamp(29px,3vw,42px)] max-[600px]:text-[37px] font-semibold leading-[1.05] text-[#a57c36]">{heading}</h2>
+        <p className="mt-[18px] text-[#605d59] text-[16px] leading-[1.9] max-[600px]:max-w-[530px]">{intro}</p>
       </div>
 
       {/* Column 2: Framed Founder Portrait (image_34.webp) */}
@@ -46,9 +46,9 @@ export function FounderSection({
 
       {/* Column 3: Extended philosophy note, italic signature, and caption */}
       <div className="scroll-reveal animate__animated animate__fadeInRight animate__slow max-[900px]:col-span-full max-[900px]:max-w-[580px] max-[900px]:justify-self-end max-[900px]:-mt-[16px] max-[600px]:col-auto max-[600px]:self-center max-[600px]:m-0">
-        <p className="mt-[18px] max-[600px]:mt-0 text-[#605d59] text-[11px] max-[600px]:text-[10px] leading-[1.9]">{extendedNote}</p>
-        <p className="mt-[24px] max-[600px]:mt-[15px] text-[#6b482c] font-[family-name:var(--signature-font,var(--serif))] text-[27px] max-[600px]:text-[21px] italic">{signature}</p>
-        <span className="block mt-[7px] text-[#8c795e] text-[8px] max-[600px]:text-[7px] tracking-[0.14em] uppercase">{caption}</span>
+        <p className="mt-[18px] max-[600px]:mt-0 text-[#605d59] text-[16px] max-[600px]:text-[14px] leading-[1.9]">{extendedNote}</p>
+        <p className="mt-[24px] max-[600px]:mt-[15px] text-[#a57c36] font-[family-name:var(--signature-font,var(--serif))] text-[27px] max-[600px]:text-[21px]">{signature}</p>
+        <span className="block mt-[7px] text-[#8c795e] text-[13px] max-[600px]:text-[12px] tracking-[0.14em] uppercase">{caption}</span>
       </div>
     </section>
   );

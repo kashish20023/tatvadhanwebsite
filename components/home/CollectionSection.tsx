@@ -19,7 +19,7 @@ export function CollectionSection({
   topTitle = "A MODERN ROYAL’S WARDROBE",
   topSubtitle = "A brand that makes men feel larger-than-life, royal, and unforgettable.",
   featureEyebrow = "Go-to luxury brand for modern grooms pan india",
-  featureTitle = "Express identity, pride and presence",
+  featureTitle = "Express identity, pride & presence",
   featureDescription = "Handcrafted, haute-couture ethnic wear blending Jaipur’s royal legacy with modern exclusivity ensuring no two grooms are ever alike.",
   featureSubDescription = "FOR THE DISCERNING MODERN GROOM",
   featureCtaText = "Show More",
@@ -38,7 +38,7 @@ export function CollectionSection({
 
       <div className="w-[min(1240px,calc(100%-80px))] max-[900px]:w-[min(calc(100%-48px),720px)] max-[600px]:w-[calc(100%-36px)] mx-auto">
         <div className="scroll-reveal w-full max-w-[800px] mx-auto text-center flex flex-col items-center justify-center max-[600px]:px-[16px]">
-          <p className="text-[#62605d] text-[9.5px] font-semibold tracking-[0.22em] leading-[1.6] uppercase text-center w-full">
+          <p className="text-[#101010] text-[13px] font-semibold tracking-[0.22em] leading-[1.6] uppercase text-center w-full">
             {topEyebrow}
           </p>
           <h2 id="discover-heading" className="mt-[10px] font-serif text-[clamp(31px,3.2vw,44px)] max-[600px]:text-[34px] font-medium tracking-[-0.015em] leading-[1.12] text-[#a57c36] uppercase text-center w-full">
@@ -134,19 +134,19 @@ export function CollectionSection({
         {/* Feature Split Section */}
         {(() => {
           return (
-            <div className="grid grid-cols-[0.8fr_1fr] max-[600px]:grid-cols-1 items-center gap-[clamp(40px,8vw,110px)] max-[900px]:gap-[38px] max-[600px]:gap-[28px] w-full mt-[85px] max-[600px]:mt-[55px] mx-auto">
-              <div className="scroll-reveal animate__animated animate__fadeInLeft animate__slow max-w-[420px] max-[600px]:max-w-[470px]">
+            <div className="grid grid-cols-[0.8fr_1fr] max-[600px]:grid-cols-1 items-center gap-[clamp(40px,8vw,110px)] max-[900px]:gap-[34px] max-[600px]:gap-[24px] w-full mt-[85px] max-[600px]:mt-[55px] mx-auto">
+              <div className="scroll-reveal animate__animated animate__fadeInLeft animate__slow max-w-[500px] max-[600px]:max-w-[500px]">
                 {featureEyebrow && (
-                  <p className="text-[#a57c36] text-[9.5px] font-semibold tracking-[0.18em] leading-[1.5] uppercase mb-[10px]">
+                  <p className="text-[#101010] text-[13px] font-semibold tracking-[0.18em] leading-[1.5] uppercase mb-[10px]">
                     {featureEyebrow}
                   </p>
                 )}
-                <h3 className="font-serif text-[clamp(28px,2.8vw,38px)] max-[600px]:text-[29px] font-medium tracking-[-0.015em] leading-[1.16] text-[#101010]">
+                <h3 className="font-serif text-[clamp(28px,2.8vw,38px)] max-[600px]:text-[34px] font-semibold tracking-[-0.015em] leading-[1.16] text-[#a57c36]">
                   {featureTitle}
                 </h3>
 
 
-                <p className="max-w-[380px] mt-[16px] mb-[22px] py-4 text-[#555] text-[12px] leading-[1.85]">
+                <p className="max-w-[380px] md:max-w-[510px] mt-[16px] mb-[22px] py-4 text-[#555] text-[16px] leading-[1.85]">
                   {featureDescription}
                 </p>
 
@@ -159,11 +159,8 @@ export function CollectionSection({
                 <div>
                   <Link href={featureCtaHref}>
                     <OriginButton
-                      className="border-[#a57c36] text-[#a57c36] hover:text-white text-[9.5px] font-medium tracking-[0.18em] border rounded-lg uppercase h-auto py-[10px] px-[28px] bg-transparent group">
-                      <span className="transition-colors duration-300 group-hover:text-white">{featureCtaText}</span>
-                      <span className="text-[#a28349] group-hover:text-white group-hover:translate-x-1 transition-all duration-300 text-[12px]" aria-hidden="true">
-                        →
-                      </span>
+                      className="border-[#a57c36] !text-white hover:!text-[#a57c36] text-[9.5px] font-medium tracking-[0.18em] border rounded-none uppercase h-auto py-[10px] px-[20px] bg-[#a57c36] hover:bg-transparent group">
+                      <span className="text-[13px] !text-white transition-colors duration-300 group-hover:!text-[#a57c36]">{featureCtaText}</span>
                     </OriginButton>
                   </Link>
                 </div>
@@ -172,7 +169,7 @@ export function CollectionSection({
                 className="overflow-hidden h-[clamp(320px,26vw,380px)] scroll-reveal animate__animated animate__fadeInRight animate__slow max-[600px]:h-[250px] rounded-[2px] group shadow-sm transition-shadow duration-500 hover:shadow-md"
               >
                 <img
-                  src="/images/NewPersonGroup.jpg"
+                  src="/images/NewPersonGroup.webp"
                   alt="A model in traditional couture seated in a Jaipur palace"
                   loading="lazy"
                   className="w-full h-full object-cover object-[center_48%] transition-transform duration-700 ease-[cubic-bezier(0.2,0.7,0.3,1)] group-hover:scale-[1.035]"
