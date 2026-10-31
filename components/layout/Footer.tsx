@@ -64,7 +64,7 @@ export function Footer({
 
       <div className="max-w-[1280px] mx-auto px-6 sm:px-10 lg:px-12">
         {/* Top Atelier Bar: Brand Logo & Private Consultation */}
-        {/* <div className="flex flex-col md:flex-row md:items-center justify-between pb-12 mb-12 border-b border-[#221e17] gap-6">
+        <div className="flex flex-col md:flex-row md:items-center justify-between pb-12 mb-12 border-b border-[#221e17] gap-6">
           <div className="flex flex-col sm:flex-row sm:items-center gap-5 sm:gap-8">
             <Link href="/" className="inline-block" aria-label="Tatvadhan Jaipur Home">
               <Image
@@ -98,7 +98,7 @@ export function Footer({
               <span className="hidden sm:inline">{contactDetails.email}</span>
             </a>
           </div>
-        </div> */}
+        </div>
 
         {/* Main Grid: Newsletter + 3 Nav Columns + Atelier Info */}
         <div className="grid grid-cols-1 lg:grid-cols-[1.7fr_0.9fr_0.9fr_0.9fr] gap-12 lg:gap-14 xl:gap-16">
@@ -265,6 +265,17 @@ export function Footer({
             {copyrightText}
           </p>
 
+          {/* <div className="order-1 md:order-2 flex items-center gap-2 text-center text-[#9c9485]">
+            <span>Crafted with Karigari Heritage</span>
+            <span className="text-[#d0ad5f] text-[9px]" aria-hidden="true">✦</span>
+            <span>Rajasthan, India</span>
+          </div> */}
+
+          {/* <div className="order-1 md:order-2 flex items-center gap-2 text-center text-[#9c9485]">
+            <span>Crafted with Karigari Heritage</span>
+            <span className="text-[#d0ad5f] text-[9px]" aria-hidden="true">✦</span>
+            <span>Rajasthan, India</span>
+          </div> */}
           {/* <div className="order-1 md:order-2 flex items-center gap-2 text-center text-[#9c9485]">
             <span>Crafted with Karigari Heritage</span>
             <span className="text-[#d0ad5f] text-[9px]" aria-hidden="true">✦</span>
